@@ -4,7 +4,9 @@
  * Not a deployed service. Not authoritative by itself.
  */
 
-import { ResolverContext, Obligation, resolveObligations } from "./resolveObligations"
+import { ResolverContext, resolveObligations } from "./resolveObligations"
+import { Obligation } from "../obligations/obligation"
+
 
 export type ResolverRunEnvelope = {
   resolver_run: {

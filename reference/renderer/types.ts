@@ -1,4 +1,4 @@
-export type QualificationPhase = "IQ" | "OQ" | "PQ"
+import { QualificationPhase } from "../obligations/obligation"
 
 export interface RenderedObligation {
   obligation_id: string

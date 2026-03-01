@@ -4,25 +4,14 @@
  * Not a deployed service. Not authoritative by itself.
  */
 
+import { Obligation } from "../obligations/obligation"
+
 export type ResolverContext = {
   equipmentCohort: string
   equipmentType: string
   selectedDomains: string[]
   includeDeprecated: boolean
   equipmentInstanceId?: string
-}
-
-export type Obligation = {
-  obligation_id: string
-  domain: string
-  equipment_applicability: {
-    cohort: string
-    equipment_types: string[]
-  }
-  lifecycle: {
-    status: "active" | "deprecated"
-  }
-  // All additional fields are carried through verbatim
 }
 
 export function resolveObligations(
@@ -55,20 +44,11 @@ export function resolveObligations(
       return false
     }
 
-    // Equipment cohort match
-    if (obligation.equipment_applicability.cohort !== context.equipmentCohort) {
-      return false
-    }
-
-    // Equipment type match
-    if (!obligation.equipment_applicability.equipment_types.includes(context.equipmentType)) {
-      return false
-    }
-
     // Lifecycle filtering
-    if (!context.includeDeprecated && obligation.lifecycle.status !== "active") {
+    if (!context.includeDeprecated && obligation.lifecycle_status !== "active") {
       return false
     }
+
 
     return true
   })

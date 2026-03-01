@@ -1,0 +1,91 @@
+{
+  "resolver_run": {
+    "run_id": "2026-02-28T22:45:00Z",
+    "resolver_version": "v1.0",
+    "contract_versions": {
+      "obligation_schema": "v1.0",
+      "resolver_output_envelope": "v1.0"
+    },
+    "execution_context": {
+      "equipment_instance_id": "PKG-SEALER-001",
+      "equipment_type": "Heat Sealer",
+      "equipment_cohort": "Packaging",
+      "selected_domains": ["packaging"],
+      "include_deprecated": false
+    }
+  },
+  "obligations": [
+    {
+      "obligation_id": "OBL_PACK_CONFIG_DOCUMENTED",
+      "title": "Packaging equipment configuration is documented",
+      "description": "The configuration settings of packaging sealing equipment are documented prior to use to support traceability and reproducibility.",
+      "domain": "packaging",
+      "equipment_applicability": {
+        "cohort": "Packaging",
+        "equipment_types": ["Heat Sealer", "Tray Sealer", "Blister Sealer", "Form-Fill-Seal Machine"]
+      },
+      "standards_anchors": [
+        {
+          "standard": "ISO 11607",
+          "clause": "7.5",
+          "context_note": "Configuration documentation supports process control and traceability."
+        }
+      ],
+      "lifecycle": {
+        "status": "active",
+        "introduced_in_version": "v1.0",
+        "deprecated_in_version": null,
+        "deprecation_reason": null,
+        "replaced_by_obligation_ids": []
+      }
+    },
+    {
+      "obligation_id": "OBL_PACK_SEALING_PARAMETERS_DEFINED",
+      "title": "Packaging sealing process parameters are defined",
+      "description": "Sealing process parameters for packaging equipment are defined and documented to support consistent package integrity.",
+      "domain": "packaging",
+      "equipment_applicability": {
+        "cohort": "Packaging",
+        "equipment_types": ["Heat Sealer", "Tray Sealer", "Blister Sealer", "Form-Fill-Seal Machine"]
+      },
+      "standards_anchors": [
+        {
+          "standard": "ISO 11607",
+          "clause": "7.5",
+          "context_note": "Defined sealing parameters support controlled packaging processes."
+        }
+      ],
+      "lifecycle": {
+        "status": "active",
+        "introduced_in_version": "v1.0",
+        "deprecated_in_version": null,
+        "deprecation_reason": null,
+        "replaced_by_obligation_ids": []
+      }
+    },
+    {
+      "obligation_id": "OBL_PACK_SEALING_RECORDS_AVAILABLE",
+      "title": "Packaging sealing process records are available",
+      "description": "Records of packaging sealing process execution are available to support traceability and investigation when required.",
+      "domain": "packaging",
+      "equipment_applicability": {
+        "cohort": "Packaging",
+        "equipment_types": ["Heat Sealer", "Tray Sealer", "Blister Sealer", "Form-Fill-Seal Machine"]
+      },
+      "standards_anchors": [
+        {
+          "standard": "ISO 11607",
+          "clause": "7.5",
+          "context_note": "Process records support traceability and investigation of packaging integrity."
+        }
+      ],
+      "lifecycle": {
+        "status": "active",
+        "introduced_in_version": "v1.0",
+        "deprecated_in_version": null,
+        "deprecation_reason": null,
+        "replaced_by_obligation_ids": []
+      }
+    }
+  ]
+}

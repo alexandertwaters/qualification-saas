@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/contracts/resolver/draft.request.v1.schema.json",
+  "title": "Resolver draft request v1.x",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["equipment_context", "draft_scope"],
+  "properties": {
+    "equipment_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "equipment_type",
+        "equipment_cohort",
+        "declared_capabilities",
+        "intended_use"
+      ],
+      "properties": {
+        "equipment_type": { "$ref": "#/$defs/catalog_id" },
+        "equipment_cohort": { "$ref": "#/$defs/catalog_id" },
+        "declared_capabilities": {
+          "type": "array",
+          "minItems": 0,
+          "items": { "$ref": "#/$defs/catalog_id" },
+          "uniqueItems": true
+        },
+        "intended_use": { "$ref": "#/$defs/catalog_id" }
+      }
+    },
+
+    "draft_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["qualification_phases", "obligation_domains"],
+      "properties": {
+        "qualification_phases": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/qualification_phase" },
+          "uniqueItems": true
+        },
+        "obligation_domains": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/catalog_id" },
+          "uniqueItems": true
+        }
+      }
+    },
+
+    "visibility_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "include_deprecated": {
+          "type": "boolean",
+          "default": false
+        },
+        "exclude_standards_references": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "qualification_phase": {
+      "type": "string",
+      "enum": ["IQ", "OQ", "PQ"]
+    },
+
+    "catalog_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Z][A-Z0-9_]*$",
+      "description": "Catalog-defined identifier. Schema enforces format; resolver must hard-error if identifier is not present in the active catalog version."
+    }
+  }
+}

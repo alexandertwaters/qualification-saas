@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/contracts/resolver/draft.response.v1.schema.json",
+  "title": "Resolver draft response v1.x",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "draft_metadata",
+    "version_anchors",
+    "resolved_obligations"
+  ],
+  "properties": {
+    "draft_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "draft_type",
+        "generated_at"
+      ],
+      "properties": {
+        "draft_type": {
+          "type": "string",
+          "const": "protocol_draft"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+
+    "version_anchors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resolver_contract_version",
+        "catalog_version",
+        "obligation_schema_version"
+      ],
+      "properties": {
+        "resolver_contract_version": {
+          "type": "string"
+        },
+        "catalog_version": {
+          "type": "string"
+        },
+        "obligation_schema_version": {
+          "type": "string"
+        }
+      }
+    },
+
+    "resolved_obligations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "obligation_id",
+          "qualification_phase",
+          "obligation_domain",
+          "lifecycle_state",
+          "obligation_text"
+        ],
+        "properties": {
+          "obligation_id": {
+            "$ref": "#/$defs/catalog_id"
+          },
+          "qualification_phase": {
+            "$ref": "#/$defs/qualification_phase"
+          },
+          "obligation_domain": {
+            "$ref": "#/$defs/catalog_id"
+          },
+          "lifecycle_state": {
+            "type": "string",
+            "enum": ["active", "deprecated"]
+          },
+          "obligation_text": {
+            "type": "string"
+          },
+          "standards_references": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["standard_id", "clause_reference"],
+              "properties": {
+                "standard_id": {
+                  "$ref": "#/$defs/catalog_id"
+                },
+                "clause_reference": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "qualification_phase": {
+      "type": "string",
+      "enum": ["IQ", "OQ", "PQ"]
+    },
+    "catalog_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Z][A-Z0-9_]*$"
+    }
+  }
+}

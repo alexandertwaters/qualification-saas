@@ -35,7 +35,6 @@
         "status": "active",
         "introduced_in_version": "v1.0",
         "deprecated_in_version": null,
-        "deprecation_reason": null,
         "replaced_by_obligation_ids": []
       }
     },
@@ -59,7 +58,6 @@
         "status": "active",
         "introduced_in_version": "v1.0",
         "deprecated_in_version": null,
-        "deprecation_reason": null,
         "replaced_by_obligation_ids": []
       }
     },
@@ -83,7 +81,6 @@
         "status": "active",
         "introduced_in_version": "v1.0",
         "deprecated_in_version": null,
-        "deprecation_reason": null,
         "replaced_by_obligation_ids": []
       }
     }

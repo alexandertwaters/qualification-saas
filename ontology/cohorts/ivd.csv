@@ -1,0 +1,3 @@
+Clinical Chemistry Analyzer|IVD|Clinical Chemistry Analyzer|{"analyzer_type":"chemistry","software_controlled":"boolean","has_audit_trail":"boolean"}|High|STD_CLIA;STD_21CFR11;STD_IEC62304
+Hematology Analyzer|IVD|Hematology Analyzer|{"analyzer_type":"hematology","software_controlled":"boolean","has_audit_trail":"boolean"}|High|STD_CLIA;STD_21CFR864;STD_21CFR11
+Blood Gas Analyzer|IVD|Blood Gas Analyzer|{"analyzer_type":"blood_gas","software_controlled":"boolean","has_audit_trail":"boolean"}|High|STD_CLIA;STD_21CFR11;STD_IEC62304

@@ -7,3 +7,4 @@ Nitrogen Generation System|Facilities & Utilities|Nitrogen Generator|{"utility_t
 Central Vacuum System|Facilities & Utilities|Vacuum System|{"utility_type":"vacuum","vacuum_level_class":"string","has_data_logger":"boolean","process_connected":"boolean"}|Medium|STD_QMS_PROCESS_VALIDATION
 Process Chiller|Facilities & Utilities|Process Chiller|{"temperature_controlled":"boolean","cooling_capacity_class":"string","has_data_logger":"boolean","redundant_circuits":"boolean"}|Medium|STD_QMS_PROCESS_VALIDATION
 Purified Water System|Facilities & Utilities|Purified Water System|{"water_quality_type":"string","sanitization_method":"string","continuous_monitoring":"boolean","has_data_logger":"boolean","distribution_loop_present":"boolean"}|High|STD_USP_1231
+Biosafety Cabinet|Facilities & Utilities|Biosafety Cabinet|{"class":"string","recirculating":"boolean","hepa_integrity_testable":"boolean"}|High|STD_NSF49

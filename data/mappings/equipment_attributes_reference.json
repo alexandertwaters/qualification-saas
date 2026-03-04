@@ -1,0 +1,53 @@
+{
+  "core_attributes": {
+    "equipment_subtype": "string",
+    "manufacturer": "string",
+    "model": "string",
+    "use_case": "string",
+    "product_risk": "low | medium | high",
+    "regulated_environment": "boolean"
+  },
+
+  "thermal_storage_attributes": {
+    "storage_range_c": "array[number, number]",
+    "has_alarm": "boolean",
+    "has_data_logger": "boolean",
+    "access_control": "none | restricted | biometric",
+    "door_open_frequency": "low | moderate | high",
+    "environment": "string",
+    "power_backup": "string"
+  },
+
+  "sterilization_attributes": {
+    "sterilization_modality": "steam | eto | dry_heat | radiation | other",
+    "terminal_sterilization": "boolean",
+    "sterilizer_type": "pre_vacuum | gravity | other",
+    "load_types": "array[string]",
+    "release_method": "array[string]",
+    "chamber_size": "small | medium | large"
+  },
+
+  "packaging_process_attributes": {
+    "forming_process": "boolean",
+    "sealing_process": "boolean",
+    "sterile_barrier": "boolean",
+    "automation_level": "manual | semi_automatic | fully_automatic",
+    "software_controlled": "boolean"
+  },
+
+  "instrumentation_attributes": {
+    "sensor_list": "array[string]",
+    "calibration_status": "string",
+    "traceability_requirements": "string"
+  },
+
+  "risk_attributes": {
+    "failure_modes": "array[string]",
+    "process_criticality": "low | medium | high",
+    "equipment_complexity": "low | medium | high"
+  },
+
+  "additional_attributes": {
+    "custom_fields": "object"
+  }
+}

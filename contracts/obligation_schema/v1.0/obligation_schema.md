@@ -8,10 +8,10 @@ An obligation is an atomic, immutable requirement statement. Resolver outputs em
 
 ```json
 {
-  "obligation_id": "OBL_PACK_CONFIG_DOCUMENTED",
-  "title": "Packaging equipment configuration is documented",
-  "description": "The configuration settings of packaging sealing equipment are documented prior to use to support traceability and reproducibility.",
-  "domain": "packaging",
+  "obligation_id": "OBL_CONFIG_DOCUMENTED",
+  "title": "Equipment configuration is documented",
+  "description": "Configuration settings are documented prior to use to support traceability and reproducibility.",
+  "domain": "CONFIGURATION_CHANGE_CONTROL",
   "equipment_applicability": {
     "cohort": "Packaging",
     "equipment_types": ["Heat Sealer", "Tray Sealer"]
@@ -27,7 +27,6 @@ An obligation is an atomic, immutable requirement statement. Resolver outputs em
     "status": "active",
     "introduced_in_version": "v1.0",
     "deprecated_in_version": null,
-    "deprecation_reason": null,
     "replaced_by_obligation_ids": []
   }
 }
@@ -68,25 +67,25 @@ introduced_in_version (required, immutable): Contract version string when introd
 
 deprecated_in_version (optional): Required when status is deprecated.
 
-deprecation_reason (optional): Required when status is deprecated.
-
 replaced_by_obligation_ids (optional): Array of replacement obligation IDs (may be empty).
 
 Controlled vocabularies
-domain allowed values (v1.x)
-packaging
+domain allowed values (v1.x) — regulatory concern, not equipment type
 
-sterilization
-
-inspection_test
-
-assembly_joining
-
-metrology
-
-facilities_utilities
-
-cold_chain_storage
+DATA_INTEGRITY_RECORDS
+AUDIT_TRAILS_TRACEABILITY
+ALARM_EVENT_MANAGEMENT
+CONFIGURATION_CHANGE_CONTROL
+SYSTEM_ACCESS_SECURITY
+INSTALLATION_ENVIRONMENT
+FUNCTIONAL_PERFORMANCE
+MONITORING_TRENDING
+REVIEW_REPORTING
+RETENTION_ARCHIVAL
+SAFETY_ELECTRICAL
+USABILITY_HUMAN_FACTORS
+BIOLOGICAL_SAFETY
+CALIBRATION_MAINTENANCE
 
 lifecycle.status allowed values
 active

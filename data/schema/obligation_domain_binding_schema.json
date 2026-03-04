@@ -1,0 +1,16 @@
+{
+  "binding_id": "string",
+  "obligation_id": "string",
+  "control_domain_id": "string",
+  "binding_role": "primary | supporting",
+
+  "phase_override": "string",
+  "section_override": "string",
+
+  "artifact_overrides": {
+    "add": ["string"],
+    "remove": ["string"]
+  },
+
+  "notes": "string"
+}

@@ -1,0 +1,2 @@
+Washer-Disinfector|Decontamination|Washer-Disinfector|{"process_type":"cleaning_disinfection","software_controlled":"boolean","has_data_logger":"boolean"}|High|STD_ISO15883;STD_AAMI_ST98
+Ultrasonic Cleaner|Decontamination|Ultrasonic Cleaner|{"process_type":"cleaning","frequency_kHz":"number"}|Medium|STD_AAMI_ST98

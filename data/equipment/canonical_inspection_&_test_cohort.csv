@@ -1,0 +1,13 @@
+canonical_name|category|subtype|key_attributes_schema|risk_level|process_standards|notes
+Vision Inspection System|Inspection & Test|Vision Inspection|{"inspection_method":"vision","software_controlled":"boolean","acceptance_logic_configurable":"boolean","has_audit_trail":"boolean","camera_resolution_class":"string"}|High|STD_QMS_PROCESS_VALIDATION|Software-driven acceptance decisions; CSV and data integrity critical.
+X-Ray Inspection System|Inspection & Test|X-Ray Inspection|{"inspection_method":"xray","software_controlled":"boolean","known_good_bad_challenge_supported":"boolean","has_audit_trail":"boolean","detector_resolution_class":"string"}|High|STD_QMS_PROCESS_VALIDATION|Known-good/bad challenge logic drives validation.
+Metal Detection System|Inspection & Test|Metal Detector|{"inspection_method":"metal_detection","sensitivity_verifiable":"boolean","reject_mechanism_present":"boolean","aperture_size_class":"string"}|Medium|STD_QMS_PROCESS_VALIDATION|Sensitivity and reject verification are core.
+Checkweigher|Inspection & Test|Checkweigher|{"measurement_type":"weight","accuracy_class":"string","reject_mechanism_present":"boolean","software_controlled":"boolean"}|Medium|STD_QMS_PROCESS_VALIDATION|Measurement accuracy tied to release decisions.
+Leak Testing System|Inspection & Test|Leak Tester|{"test_method":"string","package_integrity_claim":"boolean","software_controlled":"boolean","destructive":"boolean"}|High|STD_ISO11607|Direct package integrity verification.
+Burst Testing System|Inspection & Test|Burst Tester|{"test_method":"burst","package_integrity_claim":"boolean","pressure_ramp_controlled":"boolean"}|Medium|STD_ISO11607|Destructive packaging PQ support.
+Seal Strength Testing System|Inspection & Test|Seal Strength Tester|{"test_method":"seal_strength","package_integrity_claim":"boolean","load_cell_class":"string"}|Medium|STD_ISO11607|Quantitative seal integrity verification.
+Dye Penetration Testing Station|Inspection & Test|Dye Penetration Tester|{"test_method":"dye_penetration","package_integrity_claim":"boolean","visual_inspection_only":"boolean"}|Medium|STD_ISO11607|Qualitative package integrity verification.
+Barcode Verification System|Inspection & Test|Barcode Verifier|{"inspection_method":"barcode_verification","udi_compliance_required":"boolean","software_controlled":"boolean","has_audit_trail":"boolean"}|Medium|STD_UDI_COMPLIANCE|UDI compliance and release gating.
+Label Applicator (Inspection-Relevant)|Inspection & Test|Label Applicator|{"process_type":"label_application","placement_accuracy_verifiable":"boolean","software_controlled":"boolean"}|Medium|STD_QMS_PROCESS_VALIDATION|Placement accuracy affects traceability.
+
+

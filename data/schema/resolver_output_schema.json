@@ -1,0 +1,62 @@
+{
+  "resolver_version": "string",
+
+  "equipment_context": {
+    "type": "object",
+    "description": "Normalized equipment attributes used for evaluation."
+  },
+
+  "resolved_standards": [
+    {
+      "standard_id": "string",
+      "standard_code": "string",
+      "applicability_basis": ["string"]
+    }
+  ],
+
+  "resolved_obligations": {
+    "IQ": ["obligation_instance"],
+    "OQ": ["obligation_instance"],
+    "PQ": ["obligation_instance"]
+  },
+
+  "resolved_control_domains": [
+    {
+      "control_domain_id": "string",
+      "name": "string",
+      "applicability_basis": ["string"],
+      "lifecycle_phases": ["IQ", "OQ", "PQ"],
+      "core_evidence_types": ["string"],
+      "required_artifacts": ["string"],
+      "activated_scaling": {
+        "activated_modifiers": ["string"],
+        "scaling_effects": {
+          "type": "object"
+        }
+      }
+    }
+  ],
+
+  "aggregated_inputs": {
+    "scope_and_governance": ["string"],
+    "equipment_and_controls": ["string"],
+    "mapping_and_challenges": ["string"],
+    "routine_control": ["string"]
+  },
+
+  "aggregated_outputs": {
+    "IQ": ["string"],
+    "OQ": ["string"],
+    "PQ": ["string"]
+  },
+
+  "traceability_index": {
+    "section_name": ["obligation_id"]
+  },
+
+  "domain_traceability_index": {
+    "control_domain_id": {
+      "section_name": ["obligation_id"]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+standard_id,code,current_version,publication_date,supersedes_version,notes
+STD_QMSR,21 CFR 820,2024,2024-02-02,,QMSR; incorporates ISO 13485 by reference
+STD_ISO13485,ISO 13485,2016,2016-03-01,,Incorporated by 21 CFR 820.7
+STD_ISO14971,ISO 14971,2019,2019-12-15,,Risk management
+STD_21CFR11,21 CFR Part 11,Current,2024-01-01,,Electronic records; check eCFR for amendments
+STD_IEC62304,IEC 62304,2015,2015-06-15,,Software lifecycle
+STD_IEC62366,IEC 62366-1,2015,2015-02-15,,Usability
+STD_ISO17665,ISO 17665,2006,2006-02-01,,Steam sterilization; verify current on iso.org
+STD_ISO11138,ISO 11138,2017,2017-08-15,,Biological indicators
+STD_ISO11135,ISO 11135,2014,2014-09-15,,EtO sterilization
+STD_ISO11137,ISO 11137,2017,2017-08-15,,Radiation sterilization
+STD_ISO14937,ISO 14937,2009,2009-11-15,,General sterilization
+STD_ISO11607_1,ISO 11607-1,2019,2019-08-15,,Packaging materials
+STD_ISO11607_2,ISO 11607-2,2019,2019-08-15,,Packaging process validation
+STD_ASTMF88,ASTM F88,2023,2023-12-01,,Seal strength
+STD_ASTMF1929,ASTM F1929,2015,2015-06-01,,Dye penetration
+STD_ASTMF1140,ASTM F1140,2023,2023-12-01,,Burst testing
+STD_ISO14644_1,ISO 14644-1,2015,2015-12-15,,Cleanroom classification
+STD_ISO14644_3,ISO 14644-3,2019,2019-07-15,,Cleanroom test methods
+STD_ISO14698,ISO 14698,2003,2003-08-15,,Biocontamination
+STD_NSF49,NSF/ANSI 49,2022,2022-01-01,,Biosafety cabinets
+STD_ISO8573,ISO 8573-1,2010,2010-11-15,,Compressed air
+STD_USP1058,USP <1058>,Current,2024-01-01,,AIQ; verify on usp.org
+STD_USP791,USP <791>,Current,2024-01-01,,pH; verify on usp.org
+STD_USP643,USP <643>,Current,2024-01-01,,TOC; verify on usp.org
+STD_USP1231,USP <1231>,Current,2024-01-01,,Water systems; verify on usp.org
+STD_ISO10360,ISO 10360,2021,2021-04-15,,CMM verification
+STD_ASTME4,ASTM E4,2021,2021-06-01,,Tensile/load
+STD_ISO25178,ISO 25178-1,2016,2016-05-15,,Surface texture
+STD_NISTHB44,NIST HB 44,2023,2023-01-01,,Weights and measures
+STD_ISO17025,ISO/IEC 17025,2017,2017-11-01,,Calibration
+STD_21CFR1271,21 CFR Part 1271,Current,2024-01-01,,HCT/P; check eCFR
+STD_21CFR830,21 CFR Part 830,Current,2024-01-01,,UDI; check eCFR

@@ -4,34 +4,34 @@
   "title": "Resolver draft request v1.x",
   "type": "object",
   "additionalProperties": false,
-  "required": ["equipment_context", "draft_scope"],
+  "required": ["equipment_context"],
   "properties": {
     "equipment_context": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "equipment_type",
-        "equipment_cohort",
-        "declared_capabilities",
-        "intended_use"
-      ],
+      "required": ["equipment_type", "equipment_cohort", "declared_capabilities", "intended_use"],
       "properties": {
         "equipment_type": { "$ref": "#/$defs/catalog_id" },
         "equipment_cohort": { "$ref": "#/$defs/catalog_id" },
         "declared_capabilities": {
           "type": "array",
-          "minItems": 0,
+          "minItems": 1,
           "items": { "$ref": "#/$defs/catalog_id" },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "description": "Required. At least one capability must be selected."
         },
-        "intended_use": { "$ref": "#/$defs/catalog_id" }
+        "intended_use": {
+          "$ref": "#/$defs/catalog_id",
+          "description": "Required. Use case (e.g. HUMAN_TISSUE_STORAGE)."
+        }
       }
     },
 
     "draft_scope": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["qualification_phases", "obligation_domains"],
+      "description": "Optional. When omitted, engine derives qualification_phases and obligation_domains from equipment and catalog.",
+      "required": [],
       "properties": {
         "qualification_phases": {
           "type": "array",

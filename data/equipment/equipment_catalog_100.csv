@@ -1,0 +1,103 @@
+id,canonical_name,category,subtype,key_attributes_schema,default_iq,default_oq,default_pq,default_calibration_months,default_maintenance_months,default_requalification_months,risk_level,regulatory_references,search_aliases,locale_overrides,notes
+,Injection Molding Machine,Production: Material Forming,Injection Molding Machine,"{""clamp_force_ton"":""number"",""shot_size_oz"":""number"",""control_type"":""enum""}",TRUE,TRUE,TRUE,12,12,24,High,ISO 13485;21 CFR 820.75,molder;press,{},Special process
+,Micro-Molding Machine,Production: Material Forming,Micro-Molding Machine,"{""shot_resolution_mg"":""number"",""clamp_force_kN"":""number""}",TRUE,TRUE,TRUE,12,12,24,High,ISO 13485;21 CFR 820.75,micro molder,{},Implant components
+,Plastic Extrusion Line,Production: Material Forming,Medical Extrusion Line,"{""screw_speed_rpm"":""number"",""die_type"":""string""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 13485;21 CFR 820.75,extruder,{},Tubing control
+,Blow Molding Machine,Production: Material Forming,Medical Blow Molding Machine,"{""forming_pressure_psi"":""number"",""mold_temp_C"":""number""}",TRUE,TRUE,TRUE,6,6,12,High,ISO 13485;21 CFR 820.75,blow molder,{},Balloon forming
+,Thermoforming Machine,Production: Material Forming,Medical Thermoforming Machine,"{""heater_zones"":""integer"",""vacuum_level_mbar"":""number""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 13485;21 CFR 820.75,thermoformer,{},Sheet forming
+,Compression Molding Press,Production: Material Forming,Compression Molding Press,"{""platen_temp_C"":""number"",""press_force_ton"":""number""}",TRUE,TRUE,TRUE,12,12,24,High,ISO 13485;21 CFR 820.75,compression press,{},Elastomers
+,Resin Dryer,Production: Material Forming,Resin Drying System,"{""dew_point_C"":""number"",""airflow_CFM"":""number""}",TRUE,TRUE,TRUE,12,6,12,Medium,ISO 13485,resin dryer,{},Material conditioning
+,CNC Machining Center,Precision Machining,CNC Machining Center,"{""axis_count"":""integer"",""control_software"":""string""}",TRUE,TRUE,TRUE,12,6,24,High,ISO 13485;21 CFR 820.70,CNC mill,{},Software controlled
+,CNC Turning Center,Precision Machining,CNC Turning Center,"{""spindle_speed_rpm"":""number"",""chuck_size_in"":""number""}",TRUE,TRUE,TRUE,12,6,24,High,ISO 13485;21 CFR 820.70,CNC lathe,{},Rotational machining
+,CNC Swiss Lathe,Precision Machining,CNC Swiss Lathe,"{""bar_diameter_mm"":""number"",""sub_spindle"":""boolean""}",TRUE,TRUE,TRUE,12,6,24,High,ISO 13485;21 CFR 820.70,Swiss lathe,{},Small precision parts
+,Wire EDM Machine,Precision Machining,Wire EDM Machine,"{""wire_diameter_mm"":""number"",""max_taper_deg"":""number""}",TRUE,TRUE,TRUE,12,12,,High,ISO 13485;21 CFR 820.70,EDM,{},Fine geometry
+,Sinker EDM Machine,Precision Machining,Sinker EDM Machine,"{""electrode_material"":""string"",""spark_energy"":""setting""}",TRUE,TRUE,TRUE,12,12,,High,ISO 13485;21 CFR 820.70,sinker EDM,{},Tooling
+,Laser Cutting System,Precision Machining,Laser Cutting System,"{""laser_power_W"":""number"",""wavelength_nm"":""number""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 13485;21 CFR 820.75,laser cutter,{},HAZ risk
+,Laser Marking System,Precision Machining,Laser Marking System,"{""marking_method"":""enum"",""wavelength_nm"":""number""}",TRUE,TRUE,TRUE,12,6,12,High,21 CFR 830;ISO 13485,laser marker,{},UDI permanence
+,Waterjet Cutting System,Precision Machining,Waterjet Cutting System,"{""pressure_psi"":""number"",""abrasive_flow_kg_min"":""number""}",TRUE,TRUE,TRUE,12,6,,Medium,ISO 13485;21 CFR 820.70,waterjet,{},Rough shaping
+,Surface Grinder,Precision Machining,Surface Grinding Machine,"{""wheel_diameter_mm"":""number"",""table_travel_mm"":""number""}",TRUE,TRUE,TRUE,12,6,24,Medium,ISO 13485;21 CFR 820.70,surface grinder,{},Flatness
+,Centerless Grinder,Precision Machining,Centerless Grinding Machine,"{""wheel_diameter_mm"":""number"",""feed_rate_mm_s"":""number""}",TRUE,TRUE,TRUE,12,6,24,High,ISO 13485;21 CFR 820.70,centerless grinder,{},Guidewires
+,Polishing System,Precision Machining,Polishing/Lapping System,"{""plate_speed_rpm"":""number"",""slurry_type"":""string""}",TRUE,TRUE,TRUE,12,6,24,Medium,ISO 13485,lapper,{},Surface finish
+,Automated Assembly Cell,Production: Assembly,Automated Assembly Workcell,"{""robot_axes"":""integer"",""control_software"":""string""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 13485;21 CFR 820.75,assembly cell,{},Special process
+,Press-Fit Station,Production: Assembly,Press-Fit Assembly Station,"{""press_force_N"":""number"",""displacement_mm"":""number""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 13485;21 CFR 820.75,press fit,{},Force control
+,Crimping Machine,Production: Assembly,Crimping Machine,"{""crimp_force_N"":""number"",""target_diameter_mm"":""number""}",TRUE,TRUE,TRUE,6,12,12,High,ISO 13485;21 CFR 820.75,crimper,{},Stents/valves
+,Heat Staking Machine,Production: Assembly,Heat Staking Machine,"{""stake_temp_C"":""number"",""dwell_time_sec"":""number""}",TRUE,TRUE,TRUE,12,6,12,Medium,ISO 13485;21 CFR 820.75,heat stake,{},Plastic joining
+,Adhesive Dispensing System,Production: Assembly,Adhesive Dispensing System,"{""dispense_volume_uL"":""number"",""cure_method"":""string""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 13485;21 CFR 820.75,adhesive dispenser,{},Bond integrity
+,Torque-Controlled Fastening System,Production: Assembly,Torque-Controlled Fastening System,"{""torque_range_Nm"":""range"",""angle_control"":""boolean""}",TRUE,TRUE,TRUE,12,12,12,Medium,ISO 13485,torque driver,{},Fastener integrity
+,Heat Sealing Equipment,Production: Packaging,Heat Sealing Equipment,"{""seal_temp_C"":""number"",""dwell_time_sec"":""number""}",TRUE,TRUE,TRUE,12,12,12,High,ISO 11607-2;ASTM F88,heat sealer,{},Seal PQ
+,Tray Sealer,Production: Packaging,Tray Sealing Machine,"{""platen_temp_C"":""number"",""dwell_time_sec"":""number""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 11607-2,tray sealer,{},Uniformity
+,Form-Fill-Seal Machine,Production: Packaging,Form-Fill-Seal Machine,"{""cycle_rate_CPM"":""number"",""forming_method"":""string""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 11607-1;21 CFR 820.75,FFS,{},Special packaging
+,Blister Sealer,Production: Packaging,Blister Sealing Machine,"{""seal_pressure_psi"":""number"",""seal_temp_C"":""number""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 11607-2,blister sealer,{},Seal integrity
+,Cartoner,Production: Packaging,Automatic Cartoner,"{""speed_units_min"":""number"",""reject_logic"":""string""}",TRUE,TRUE,TRUE,12,6,12,Medium,ISO 13485,cartoner,{},Line challenge
+,Case Packer,Production: Packaging,Automatic Case Packer,"{""speed_cases_hr"":""number"",""case_size_range"":""string""}",TRUE,TRUE,TRUE,12,6,12,Medium,ISO 13485,case packer,{},End-of-line
+,Shrink Wrapper,Production: Packaging,Shrink Wrapping System,"{""tunnel_temp_C"":""number"",""conveyor_speed_m_min"":""number""}",TRUE,TRUE,TRUE,12,6,12,Medium,ISO 13485,shrink wrapper,{},Secondary packaging
+,Label Printing System,Production: Labeling,UDI Label Printing System,"{""print_method"":""enum"",""dpi"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,21 CFR 830;21 CFR 11,UDI printer,{},Barcode quality
+,Label Applicator,Production: Labeling,Label Applicator,"{""placement_accuracy_mm"":""number"",""speed_m_min"":""number""}",TRUE,TRUE,TRUE,12,12,,Medium,ISO 13485,labeler,{},Placement PQ
+,Barcode Verifier,Production: Inspection,Barcode Verification System,"{""symbology"":""string"",""grade_threshold"":""string""}",TRUE,TRUE,FALSE,12,12,,Medium,21 CFR 830,barcode verifier,{},UDI verification
+,Checkweigher,Production: Inspection,Dynamic Checkweigher,"{""accuracy_g"":""number"",""reject_mechanism"":""string""}",TRUE,TRUE,TRUE,12,6,,Medium,NIST HB 44;21 CFR 820,checkweigher,{},Weight challenge
+,Metal Detector,Production: Inspection,Metal Detection System,"{""sensitivity_mm"":""number"",""aperture_mm"":""number""}",TRUE,TRUE,TRUE,12,6,,Medium,ISO 13485,metal detector,{},Foreign body
+,X-Ray Inspection System,Production: Inspection,X-Ray Inspection System,"{""detector_resolution_um"":""number"",""reject_logic"":""string""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 13485;21 CFR 11,x-ray inspection,{},Known good/bad
+,Vision Inspection System,Production: Inspection,Automated Vision Inspection System,"{""camera_resolution_MP"":""number"",""software_version"":""string""}",TRUE,TRUE,TRUE,12,12,12,High,ISO 13485;21 CFR 11,vision system,{},CSV
+,Leak Tester,Production: Inspection,Leak Testing System,"{""test_method"":""enum"",""test_pressure"":""number""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 13485,leak tester,{},Package integrity
+,Burst Tester,Production: Inspection,Burst Testing System,"{""pressure_range_psi"":""range"",""ramp_rate"":""number""}",TRUE,TRUE,TRUE,12,12,,Medium,ASTM F1140,burst tester,{},Packaging PQ
+,Seal Strength Tester,Production: Inspection,Seal Strength Testing System,"{""load_cell_N"":""number"",""speed_mm_min"":""number""}",TRUE,TRUE,TRUE,12,12,,Medium,ASTM F88,seal tester,{},Packaging PQ
+,Dye Penetration Station,Production: Inspection,Dye Penetration Testing Station,"{""dye_type"":""string"",""soak_time_sec"":""number""}",TRUE,TRUE,TRUE,12,12,,Medium,ASTM F1929,dye test,{},Visual integrity
+,Steam Sterilizer,Sterilization,Steam Sterilizer,"{""cycle_type"":""enum"",""chamber_volume_L"":""number""}",TRUE,TRUE,TRUE,6,6,12,High,ISO 17665;ISO 11138,autoclave,{},BI PQ
+,Washer-Disinfector,Sterilization & Decontamination,Washer-Disinfector,"{""cycle_temp_C"":""number"",""spray_pressure_psi"":""number""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 15883,washer-disinfector,{},Cleaning validation
+,Ethylene Oxide Sterilizer,Sterilization,Ethylene Oxide Sterilizer,"{""EtO_concentration_mg_L"":""number"",""humidity_percent"":""number""}",TRUE,TRUE,TRUE,6,6,12,High,ISO 11135;21 CFR 820.75,EtO sterilizer,{},Fractional cycles
+,EtO Aeration Cabinet,Sterilization,EtO Aeration Cabinet,"{""temp_setpoint_C"":""number"",""air_changes_hr"":""number""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 11135,aeration cabinet,{},Residual reduction
+,Radiation Sterilization Service,Sterilization,Radiation Sterilization,"{""dose_range_kGy"":""range"",""dosimeter_type"":""string""}",TRUE,TRUE,TRUE,12,12,12,High,ISO 11137,gamma;e-beam,{},Contract sterilization
+,VHP Decontamination System,Sterilization,VHP Decontamination System,"{""H2O2_rate_g_min"":""number"",""airflow_m3_hr"":""number""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 14937,VHP unit,{},Room/isolation
+,Dry Heat Oven,Sterilization & Decontamination,Dry Heat Oven,"{""max_temp_C"":""number"",""uniformity_C"":""number""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 13485,depyro oven,{},Endotoxin reduction
+,Temperature-Controlled Storage,Cold Chain,Refrigerated Storage Unit,"{""operating_range_C"":""range"",""alarm_setpoints"":""object""}",TRUE,TRUE,TRUE,12,12,12,Medium,ISO 13485,medical refrigerator,{},User-defined range
+,Ultra-Low Temperature Storage,Cold Chain,Ultra-Low Temperature Freezer,"{""operating_setpoint_C"":""number"",""backup_power"":""boolean""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 13485;21 CFR 1271,ULT freezer,{},Alarm verification
+,Cryogenic Storage System,Cold Chain,Cryogenic Storage System,"{""storage_medium"":""enum"",""level_monitoring"":""boolean""}",TRUE,TRUE,TRUE,12,6,12,High,21 CFR 1271,LN2 storage,{},Cell/tissue
+,Controlled Rate Freezer,Cold Chain,Controlled Rate Freezer,"{""cooling_rate_C_min"":""number"",""chamber_volume_L"":""number""}",TRUE,TRUE,TRUE,6,6,12,High,21 CFR 1271,CRF,{},Cell therapy
+,Cleanroom HVAC System,Facilities & Utilities,Cleanroom HVAC System,"{""airflow_CFM"":""number"",""filter_stages"":""integer""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 14644,AHU,{},Cleanroom cert
+,HEPA Filtration Unit,Facilities & Utilities,HEPA Filtration Unit,"{""filter_efficiency_percent"":""number"",""leak_test_required"":""boolean""}",TRUE,TRUE,FALSE,12,12,12,High,ISO 14644-3,HEPA filter,{},PAO testing
+,Differential Pressure Monitor,Facilities & Utilities,Differential Pressure Monitoring System,"{""range_Pa"":""number"",""accuracy_percent"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,ISO 14644,dp monitor,{},Alarm challenge
+,Compressed Air System,Facilities & Utilities,Compressed Air System,"{""dew_point_C"":""number"",""pressure_psi"":""number""}",TRUE,TRUE,TRUE,12,6,12,High,ISO 8573-1,CDA,{},Air quality
+,Nitrogen Generator,Facilities & Utilities,Nitrogen Generation System,"{""purity_percent"":""number"",""flow_SCFM"":""number""}",TRUE,TRUE,TRUE,12,6,12,Medium,ISO 13485,nitrogen generator,{},Gas purity
+,Vacuum System,Facilities & Utilities,Central Vacuum System,"{""vacuum_level_inHg"":""number"",""flow_CFM"":""number""}",TRUE,TRUE,TRUE,12,6,12,Medium,ISO 13485,facility vacuum,{},Process support utility
+,Process Chiller,Facilities & Utilities,Process Chiller,"{""cooling_capacity_kW"":""number"",""setpoint_C"":""number""}",TRUE,TRUE,TRUE,12,6,12,Medium,ISO 13485,process chiller,{},Temperature stability
+,Purified Water System,Facilities & Utilities,Purified Water System,"{""TOC_ppb"":""number"",""flow_GPM"":""number""}",TRUE,TRUE,TRUE,6,6,12,High,USP <1231>,PW system,{},Sanitization validation
+,Environmental Monitoring System,Facilities & Utilities,Environmental Monitoring System,"{""sensor_types"":""array"",""audit_trail"":""boolean""}",TRUE,TRUE,TRUE,12,12,12,High,21 CFR 11;ISO 14644,EMS,{},CSV required
+,Particle Counter,Metrology,Airborne Particle Counter,"{""flow_rate_LPM"":""number"",""channels"":""integer""}",TRUE,TRUE,FALSE,12,12,,High,ISO 14644,particle counter,{},Cleanroom certification
+,Microbial Air Sampler,Metrology,Viable Air Sampler,"{""flow_rate_LPM"":""number"",""timer_accuracy_percent"":""number""}",TRUE,TRUE,FALSE,12,12,,High,ISO 14698,air sampler,{},Viable monitoring
+,Surface Particle Counter,Metrology,Surface Particle Counter,"{""sensitivity_um"":""number"",""scan_area_cm2"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,ISO 14644,surface particle counter,{},Surface cleanliness
+,Temperature/Humidity Probe,Metrology,Temperature and Humidity Probe,"{""temp_accuracy_C"":""number"",""rh_accuracy_percent"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,ISO 17025,temp RH probe,{},Facility monitoring
+,Analytical Balance,Metrology,Analytical Balance,"{""readability_mg"":""number"",""capacity_g"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,USP <1058>,balance,{},Daily checks
+,Microbalance,Metrology,Microbalance,"{""readability_ug"":""number"",""min_weight_mg"":""number""}",TRUE,TRUE,FALSE,6,6,,High,USP <1058>,microbalance,{},Environmental sensitivity
+,Digital Caliper,Metrology,Digital Caliper,"{""resolution_mm"":""number"",""range_mm"":""number""}",TRUE,TRUE,FALSE,12,12,,Low,ISO 17025,caliper,{},Dimensional checks
+,Micrometer,Metrology,Digital Micrometer,"{""resolution_mm"":""number"",""range_mm"":""number""}",TRUE,TRUE,FALSE,12,12,,Low,ISO 17025,micrometer,{},Dimensional checks
+,Height Gage,Metrology,Digital Height Gage,"{""resolution_mm"":""number"",""max_height_mm"":""number""}",TRUE,TRUE,FALSE,12,12,,Low,ISO 17025,height gage,{},Dimensional checks
+,Coordinate Measuring Machine,Metrology,Coordinate Measuring Machine,"{""measurement_volume"":""string"",""accuracy_um"":""number""}",TRUE,TRUE,TRUE,12,12,24,High,ISO 10360,CMM,{},Artifact verification
+,Optical Comparator,Metrology,Optical Comparator,"{""magnification_x"":""number"",""stage_accuracy_mm"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,ISO 17025,optical comparator,{},Profile measurement
+,Vision Measurement System,Metrology,Vision Measurement System,"{""accuracy_um"":""number"",""software_version"":""string""}",TRUE,TRUE,TRUE,12,12,12,High,ISO 13485;21 CFR 11,vision metrology,{},CSV may apply
+,Surface Profilometer,Metrology,Surface Profilometer,"{""resolution_nm"":""number"",""range_um"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,ISO 25178,profilometer,{},Surface finish
+,Roundness Tester,Metrology,Roundness Tester,"{""resolution_um"":""number"",""max_diameter_mm"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,ISO 17025,roundness tester,{},Cylindricity
+,Hardness Tester,Metrology,Hardness Tester,"{""scale"":""string"",""load_kgf"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,ASTM E18,hardness tester,{},Material verification
+,Universal Testing Machine,Metrology,Universal Testing Machine,"{""load_capacity_kN"":""number"",""speed_range_mm_min"":""range""}",TRUE,TRUE,TRUE,12,12,,High,ASTM E4,UTM,{},Mechanical testing
+,Torque Tester,Metrology,Torque Testing System,"{""torque_range_Nm"":""range"",""accuracy_percent"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,ISO 17025,torque tester,{},Fastener validation
+,Force Gauge Stand,Metrology,Force Testing Stand,"{""force_range_N"":""range"",""speed_mm_min"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,ISO 17025,force stand,{},Pull/peel tests
+,Laser Micrometer,Metrology,Laser Micrometer,"{""range_mm"":""range"",""linearity_um"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,ISO 17025,laser micrometer,{},Inline OD
+,Thickness Gauge,Metrology,Thickness Gauge,"{""resolution_um"":""number"",""range_mm"":""number""}",TRUE,TRUE,FALSE,12,12,,Low,ISO 17025,thickness gauge,{},Film thickness
+,pH Measurement System,Analytical Lab,pH Measurement System,"{""measurement_range"":""range"",""temperature_compensation"":""boolean""}",TRUE,TRUE,FALSE,6,12,,Medium,USP <791>,pH meter,{},Daily calibration
+,Conductivity Measurement System,Analytical Lab,Conductivity Measurement System,"{""measurement_range_uS_cm"":""range"",""cell_constant"":""string""}",TRUE,TRUE,FALSE,6,12,,Medium,USP <645>,conductivity meter,{},Water systems
+,TOC Analyzer,Analytical Lab,TOC Analyzer,"{""measurement_range_ppb"":""range"",""method"":""string""}",TRUE,TRUE,TRUE,12,6,12,High,USP <643>,TOC analyzer,{},Water validation
+,HPLC System,Analytical Lab,HPLC System,"{""detector_type"":""string"",""autosampler"":""boolean""}",TRUE,TRUE,TRUE,12,6,12,High,USP <1058>;21 CFR 11,HPLC,{},CSV required
+,GC/MS System,Analytical Lab,GC/MS System,"{""mass_range_m_z"":""range"",""autosampler"":""boolean""}",TRUE,TRUE,TRUE,12,6,12,High,USP <467>;21 CFR 11,GCMS,{},Residual analysis
+,FTIR Spectrometer,Analytical Lab,FTIR Spectrometer,"{""spectral_range_cm1"":""range"",""resolution_cm1"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,USP <854>,FTIR,{},Material ID
+,UV-Vis Spectrophotometer,Analytical Lab,UV-Vis Spectrophotometer,"{""wavelength_range_nm"":""range"",""bandwidth_nm"":""number""}",TRUE,TRUE,FALSE,12,12,,Medium,USP <857>,UV-Vis,{},Photometric accuracy
+,Incubator,Analytical Lab,General Laboratory Incubator,"{""temp_range_C"":""range"",""uniformity_C"":""number""}",TRUE,TRUE,TRUE,6,6,12,Medium,ISO 13485,incubator,{},Temperature mapping
+,CO2 Incubator,Analytical Lab,CO2 Cell Culture Incubator,"{""temp_range_C"":""range"",""CO2_range_percent"":""range""}",TRUE,TRUE,TRUE,6,6,12,High,ISO 13485,CO2 incubator,{},Cell culture
+,Shaking Incubator,Analytical Lab,Shaking Incubator,"{""rpm_range"":""range"",""temp_range_C"":""range""}",TRUE,TRUE,TRUE,12,6,12,Medium,ISO 13485,shaking incubator,{},Uniformity
+,Benchtop Centrifuge,Analytical Lab,Benchtop Centrifuge,"{""max_rpm"":""number"",""timer_accuracy_percent"":""number""}",TRUE,TRUE,FALSE,12,6,,Low,ISO 13485,centrifuge,{},Basic OQ
+,Refrigerated Centrifuge,Analytical Lab,Refrigerated Centrifuge,"{""max_rpm"":""number"",""temp_control"":""boolean""}",TRUE,TRUE,FALSE,12,6,,Medium,ISO 13485,refrigerated centrifuge,{},Speed/temp verification
+,Plate Reader,IVD Lab,Microplate Reader,"{""wavelength_range_nm"":""range"",""modes"":""array""}",TRUE,TRUE,TRUE,12,12,12,High,USP <1058>;21 CFR 11,plate reader,{},Linearity
+,Plate Washer,IVD Lab,Microplate Washer,"{""residual_volume_uL"":""number"",""wash_heads"":""integer""}",TRUE,TRUE,TRUE,12,6,12,Medium,USP <1058>,plate washer,{},Aspiration efficiency
+,Automated Liquid Handler,IVD Lab,Automated Liquid Handling System,"{""volume_range_uL"":""range"",""deck_positions"":""integer""}",TRUE,TRUE,TRUE,12,6,12,High,USP <1058>;21 CFR 11,liquid handler,{},Gravimetric PQ
+,Clinical Chemistry Analyzer,IVD Lab,Clinical Chemistry Analyzer,"{""throughput_tests_hr"":""number"",""sample_volume_uL"":""number""}",TRUE,TRUE,TRUE,6,6,12,High,CLIA;21 CFR 11,chem analyzer,{},CSV + linearity
+,Hematology Analyzer,IVD Lab,Hematology Analyzer,"{""technology"":""string"",""throughput_tests_hr"":""number""}",TRUE,TRUE,TRUE,6,6,12,High,CLIA;21 CFR 11,hematology analyzer,{},Controls
+,Blood Gas Analyzer,IVD Lab,Blood Gas Analyzer,"{""analytes"":""array"",""warmup_time_sec"":""number""}",TRUE,TRUE,TRUE,6,12,12,High,CLIA;21 CFR 11,blood gas analyzer,{},Connectivity
+
+

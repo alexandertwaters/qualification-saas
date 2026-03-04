@@ -1,0 +1,33 @@
+{
+  "equipment_subtype": "string",
+  "manufacturer": "string",
+  "model": "string",
+
+  "sterile_barrier": "boolean",
+  "sealing_process": "boolean",
+  "forming_process": "boolean",
+  "sterilization_modality": "string",
+  "terminal_sterilization": "boolean",
+
+  "load_types": ["string"],
+  "product_risk": "low | medium | high",
+
+  "automation_level": "manual | semi_automatic | fully_automatic",
+  "software_controlled": "boolean",
+
+  "has_alarm": "boolean",
+  "has_data_logger": "boolean",
+
+  "environment": "string",
+  "facility_class": "string",
+
+  "power_backup": "string",
+  "access_control": "string",
+
+  "door_open_frequency": "low | moderate | high",
+
+  "additional_attributes": {
+    "type": "object",
+    "description": "Extensible field for equipment-specific attributes."
+  }
+}

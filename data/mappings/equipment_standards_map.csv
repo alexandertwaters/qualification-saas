@@ -1,0 +1,531 @@
+equipment_subtype,standard_id,standard_code,standard_role,rule_group,trigger_condition,protocol_impact,notes
+Injection Molding Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Injection Molding Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Injection Molding Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Injection Molding Machine,STD_QMSR,21 CFR 820.75,Regulatory,Special Process,special process=TRUE,PQ,Special process validation
+Injection Molding Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Special Process,special process=TRUE,PQ,Process window + capability
+
+Medical Extrusion Line,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Medical Extrusion Line,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Medical Extrusion Line,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Medical Extrusion Line,STD_QMSR,21 CFR 820.75,Regulatory,Special Process,special process=TRUE,PQ,Special process validation
+Medical Extrusion Line,STD_ISO13485,ISO 13485:2016,Regulatory,Special Process,special process=TRUE,PQ,Dimensional capability
+
+Micro-Molding Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Micro-Molding Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Micro-Molding Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Micro-Molding Machine,STD_QMSR,21 CFR 820.75,Regulatory,Special Process,special process=TRUE,PQ,Implant-grade process
+Micro-Molding Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Special Process,special process=TRUE,PQ,Micro-feature capability
+
+Medical Blow Molding Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Medical Blow Molding Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Medical Blow Molding Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Medical Blow Molding Machine,STD_QMSR,21 CFR 820.75,Regulatory,Special Process,special process=TRUE,PQ,Special process validation
+
+Medical Thermoforming Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Medical Thermoforming Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Medical Thermoforming Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Medical Thermoforming Machine,STD_QMSR,21 CFR 820.75,Regulatory,Special Process,special process=TRUE,PQ,Special process validation
+
+Compression Molding Press,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Compression Molding Press,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Compression Molding Press,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Compression Molding Press,STD_QMSR,21 CFR 820.75,Regulatory,Special Process,special process=TRUE,PQ,Elastomeric process validation
+
+Resin Drying System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Resin Drying System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Resin Drying System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Resin Drying System,STD_QMSR,21 CFR 820.70,Regulatory,Process Control,utility impacts material quality,OQ,Material conditioning control
+
+CNC Machining Center,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+CNC Machining Center,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+CNC Machining Center,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+CNC Machining Center,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Electronic records & audit trails
+CNC Machining Center,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+CNC Machining Center,STD_IEC62366,IEC 62366-1,Process,Software,user_interface=true,OQ,Usability risk mitigation
+CNC Machining Center,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+CNC Turning Center,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+CNC Turning Center,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+CNC Turning Center,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+CNC Turning Center,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Electronic records & audit trails
+CNC Turning Center,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+CNC Turning Center,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+CNC Swiss Lathe,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+CNC Swiss Lathe,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+CNC Swiss Lathe,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+CNC Swiss Lathe,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Electronic records & audit trails
+CNC Swiss Lathe,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+CNC Swiss Lathe,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Wire EDM Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Wire EDM Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Wire EDM Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Wire EDM Machine,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Electronic records & audit trails
+Wire EDM Machine,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+Wire EDM Machine,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Sinker EDM Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Sinker EDM Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Sinker EDM Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Sinker EDM Machine,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Electronic records & audit trails
+Sinker EDM Machine,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+Sinker EDM Machine,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Laser Cutting System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Laser Cutting System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Laser Cutting System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Laser Cutting System,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Electronic records & audit trails
+Laser Cutting System,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+Surface Grinding Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Surface Grinding Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Surface Grinding Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+Centerless Grinding Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Centerless Grinding Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Centerless Grinding Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+Polishing/Lapping System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Polishing/Lapping System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Polishing/Lapping System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Polishing/Lapping System,STD_ISO25178,ISO 25178,Test Method,Metrology,surface_finish_critical=true,OQ,Surface texture verification
+
+Automated Assembly Workcell,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Automated Assembly Workcell,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Automated Assembly Workcell,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Automated Assembly Workcell,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Electronic records & audit trails
+Automated Assembly Workcell,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+Automated Assembly Workcell,STD_IEC62366,IEC 62366-1,Process,Software,user_interface=true,OQ,Usability risk mitigation
+Automated Assembly Workcell,STD_QMSR,21 CFR 820.75,Regulatory,Special Process,special_process=true,PQ,Special process validation for automated assembly
+
+Press-Fit Assembly Station,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Press-Fit Assembly Station,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Press-Fit Assembly Station,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Press-Fit Assembly Station,STD_QMSR,21 CFR 820.75,Regulatory,Special Process,special_process=true,PQ,Force-controlled assembly requires PQ
+
+Crimping Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Crimping Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Crimping Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Crimping Machine,STD_QMSR,21 CFR 820.75,Regulatory,Special Process,special_process=true,PQ,Crimp integrity is a special process
+
+Heat Staking Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Heat Staking Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Heat Staking Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Heat Staking Machine,STD_QMSR,21 CFR 820.75,Regulatory,Special Process,special_process=true,PQ,Heat staking is a special process requiring PQ
+
+Adhesive Dispensing System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Adhesive Dispensing System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Adhesive Dispensing System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Adhesive Dispensing System,STD_QMSR,21 CFR 820.75,Regulatory,Special Process,special_process=true,PQ,Adhesive bonding is a special process
+Adhesive Dispensing System,STD_ASTMF2397,ASTM F2397,Test Method,Surface Treatment,coating_or_lubricity=true,PQ,Lubricity testing for coated devices
+
+Torque-Controlled Fastening System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Torque-Controlled Fastening System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Torque-Controlled Fastening System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Torque-Controlled Fastening System,STD_QMSR,21 CFR 820.75,Regulatory,Special Process,special_process=true,PQ,Torque-controlled fastening is a special process
+Torque-Controlled Fastening System,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,torque_measurement=true,IQ;OQ,Calibration traceability for torque tools
+
+Heat Sealing Equipment,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Heat Sealing Equipment,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Heat Sealing Equipment,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Heat Sealing Equipment,STD_ISO11607_1,ISO 11607-1,Process,Packaging,sterile_barrier=true,IQ;OQ,Packaging material & system requirements
+Heat Sealing Equipment,STD_ISO11607_2,ISO 11607-2,Process,Packaging,sealing_process=true,OQ;PQ,Seal process validation
+Heat Sealing Equipment,STD_ASTMF88,ASTM F88,Test Method,Packaging,seal_strength_required=true,PQ,Seal strength acceptance criteria
+Heat Sealing Equipment,STD_ASTMF1929,ASTM F1929,Test Method,Packaging,dye_penetration_required=true,PQ,Package integrity testing
+Heat Sealing Equipment,STD_ASTMF1140,ASTM F1140,Test Method,Packaging,burst_testing_required=true,PQ,Burst strength testing
+
+Tray Sealing Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Tray Sealing Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Tray Sealing Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Tray Sealing Machine,STD_ISO11607_1,ISO 11607-1,Process,Packaging,sterile_barrier=true,IQ;OQ,Packaging material & system requirements
+Tray Sealing Machine,STD_ISO11607_2,ISO 11607-2,Process,Packaging,sealing_process=true,OQ;PQ,Seal process validation
+Tray Sealing Machine,STD_ASTMF88,ASTM F88,Test Method,Packaging,seal_strength_required=true,PQ,Seal strength acceptance criteria
+
+Form-Fill-Seal Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Form-Fill-Seal Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Form-Fill-Seal Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Form-Fill-Seal Machine,STD_ISO11607_1,ISO 11607-1,Process,Packaging,sterile_barrier=true,IQ;OQ,Packaging material & system requirements
+Form-Fill-Seal Machine,STD_ISO11607_2,ISO 11607-2,Process,Packaging,sealing_process=true,OQ;PQ,Seal process validation
+
+Blister Sealing Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Blister Sealing Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Blister Sealing Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Blister Sealing Machine,STD_ISO11607_1,ISO 11607-1,Process,Packaging,sterile_barrier=true,IQ;OQ,Packaging material & system requirements
+Blister Sealing Machine,STD_ISO11607_2,ISO 11607-2,Process,Packaging,sealing_process=true,OQ;PQ,Seal process validation
+
+Automatic Cartoner,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Automatic Cartoner,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Automatic Cartoner,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+Automatic Case Packer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Automatic Case Packer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Automatic Case Packer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+Shrink Wrapping System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Shrink Wrapping System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Shrink Wrapping System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+Barcode Verification System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Barcode Verification System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Barcode Verification System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Barcode Verification System,STD_21CFR830,21 CFR 830,Regulatory,Labeling,UDI_required=true,OQ,UDI barcode quality requirements
+
+Dynamic Checkweigher,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Dynamic Checkweigher,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Dynamic Checkweigher,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Dynamic Checkweigher,STD_NISTHB44,NIST HB 44,Regulatory,Metrology,commercial_weighing=true,OQ,Legal-for-trade accuracy requirements
+Dynamic Checkweigher,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Metal Detection System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Metal Detection System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Metal Detection System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+X-Ray Inspection System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+X-Ray Inspection System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+X-Ray Inspection System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+X-Ray Inspection System,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+X-Ray Inspection System,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+Automated Vision Inspection System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Automated Vision Inspection System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Automated Vision Inspection System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Automated Vision Inspection System,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Automated Vision Inspection System,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+Automated Vision Inspection System,STD_IEC62366,IEC 62366-1,Process,Software,user_interface=true,OQ,Usability risk mitigation
+
+Leak Testing System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Leak Testing System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Leak Testing System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+
+Burst Testing System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Burst Testing System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Burst Testing System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Burst Testing System,STD_ASTMF1140,ASTM F1140,Test Method,Packaging,burst_testing_required=true,PQ,Burst strength acceptance criteria
+
+Seal Strength Testing System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Seal Strength Testing System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Seal Strength Testing System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Seal Strength Testing System,STD_ASTMF88,ASTM F88,Test Method,Packaging,seal_strength_required=true,PQ,Seal strength acceptance criteria
+
+Dye Penetration Testing Station,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Dye Penetration Testing Station,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Dye Penetration Testing Station,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Dye Penetration Testing Station,STD_ASTMF1929,ASTM F1929,Test Method,Packaging,dye_penetration_required=true,PQ,Package integrity acceptance criteria
+
+Steam Sterilizer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Steam Sterilizer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Steam Sterilizer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Steam Sterilizer,STD_ISO17665,ISO 17665,Process,Sterilization,modality=steam,OQ;PQ,Moist heat sterilization validation
+Steam Sterilizer,STD_ISO11138,ISO 11138,Test Method,Sterilization,BI_required=true,PQ,Biological indicator qualification
+Steam Sterilizer,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Steam Sterilizer,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+Washer-Disinfector,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Washer-Disinfector,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Washer-Disinfector,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Washer-Disinfector,STD_ISO15883,ISO 15883,Process,Decontamination,washer_disinfector=true,OQ;PQ,Cleaning and disinfection validation
+Washer-Disinfector,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+
+Ethylene Oxide Sterilizer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Ethylene Oxide Sterilizer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Ethylene Oxide Sterilizer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Ethylene Oxide Sterilizer,STD_ISO11135,ISO 11135,Process,Sterilization,modality=EtO,OQ;PQ,EtO sterilization validation
+Ethylene Oxide Sterilizer,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Ethylene Oxide Sterilizer,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+EtO Aeration Cabinet,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+EtO Aeration Cabinet,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+EtO Aeration Cabinet,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+EtO Aeration Cabinet,STD_ISO11135,ISO 11135,Process,Sterilization,modality=EtO,OQ,Residual removal requirements
+
+Radiation Sterilization,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Radiation Sterilization,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Radiation Sterilization,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Radiation Sterilization,STD_ISO11137,ISO 11137,Process,Sterilization,modality=radiation,OQ;PQ,Dose mapping and validation
+Radiation Sterilization,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+
+VHP Decontamination System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+VHP Decontamination System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+VHP Decontamination System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+VHP Decontamination System,STD_ISO14937,ISO 14937,Process,Sterilization,modality=VHP,OQ;PQ,General sterilization validation for non-terminal methods
+VHP Decontamination System,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+
+Dry Heat Oven,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Dry Heat Oven,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Dry Heat Oven,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Dry Heat Oven,STD_ISO13485,ISO 13485:2016,Process,Sterilization,depyrogenation=true,OQ;PQ,Used for endotoxin reduction
+Dry Heat Oven,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+
+Refrigerated Storage Unit,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Refrigerated Storage Unit,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Refrigerated Storage Unit,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Refrigerated Storage Unit,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Refrigerated Storage Unit,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+Ultra-Low Temperature Freezer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Ultra-Low Temperature Freezer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Ultra-Low Temperature Freezer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Ultra-Low Temperature Freezer,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Ultra-Low Temperature Freezer,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+Cryogenic Storage System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Cryogenic Storage System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Cryogenic Storage System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Cryogenic Storage System,STD_21CFR1271,21 CFR 1271,Regulatory,Tissue,tissue_or_HCTP=true,IQ;OQ;PQ,Tissue and cell handling requirements
+Cryogenic Storage System,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Cryogenic Storage System,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+Controlled Rate Freezer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Controlled Rate Freezer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Controlled Rate Freezer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Controlled Rate Freezer,STD_21CFR1271,21 CFR 1271,Regulatory,Tissue,tissue_or_HCTP=true,IQ;OQ;PQ,Cell/tissue freezing requirements
+Controlled Rate Freezer,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Controlled Rate Freezer,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+Cleanroom HVAC System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Cleanroom HVAC System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Cleanroom HVAC System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Cleanroom HVAC System,STD_ISO14644_1,ISO 14644-1,Regulatory,Cleanroom,cleanroom_environment=true,IQ;OQ,Cleanroom classification
+Cleanroom HVAC System,STD_ISO14644_3,ISO 14644-3,Process,Cleanroom,cleanroom_environment=true,OQ,Cleanroom test methods (airflow, recovery)
+Cleanroom HVAC System,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+
+HEPA Filtration Unit,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+HEPA Filtration Unit,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+HEPA Filtration Unit,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+HEPA Filtration Unit,STD_ISO14644_3,ISO 14644-3,Process,Cleanroom,cleanroom_environment=true,OQ,HEPA integrity and PAO testing
+
+Differential Pressure Monitoring System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Differential Pressure Monitoring System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Differential Pressure Monitoring System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Differential Pressure Monitoring System,STD_ISO14644_1,ISO 14644-1,Regulatory,Cleanroom,cleanroom_environment=true,OQ,Room pressure cascade requirements
+Differential Pressure Monitoring System,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+
+Compressed Air System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Compressed Air System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Compressed Air System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Compressed Air System,STD_ISO8573,ISO 8573-1,Process,Utilities,compressed_air=true,OQ,Compressed air purity (oil, water, particles)
+
+Nitrogen Generation System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Nitrogen Generation System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Nitrogen Generation System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+Central Vacuum System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Central Vacuum System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Central Vacuum System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+Process Chiller,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Process Chiller,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Process Chiller,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+Purified Water System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Purified Water System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Purified Water System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Purified Water System,STD_USP1231,USP <1231>,Process,Utilities,water_system=true,OQ;PQ,Water system validation (Phase I–III)
+Purified Water System,STD_USP643,USP <643>,Test Method,Utilities,TOC_required=true,OQ,TOC acceptance criteria
+
+Environmental Monitoring System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Environmental Monitoring System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Environmental Monitoring System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Environmental Monitoring System,STD_ISO14698,ISO 14698,Process,Cleanroom,viable_monitoring=true,OQ,Microbial monitoring requirements
+Environmental Monitoring System,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Environmental Monitoring System,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+Analytical Balance,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Analytical Balance,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Analytical Balance,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Analytical Balance,STD_USP1058,USP <1058>,Process,Analytical,AIQ_group=BC,IQ;OQ,Analytical instrument qualification
+Analytical Balance,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Microbalance,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Microbalance,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Microbalance,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Microbalance,STD_USP1058,USP <1058>,Process,Analytical,AIQ_group=BC,IQ;OQ,Analytical instrument qualification
+Microbalance,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Digital Caliper,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Digital Caliper,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Digital Caliper,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Digital Caliper,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Digital Micrometer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Digital Micrometer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Digital Micrometer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Digital Micrometer,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Digital Height Gage,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Digital Height Gage,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Digital Height Gage,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Digital Height Gage,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Coordinate Measuring Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Coordinate Measuring Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Coordinate Measuring Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Coordinate Measuring Machine,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+Coordinate Measuring Machine,STD_ISO10360,ISO 10360,Test Method,Metrology,CMM=true,OQ,Performance verification (MPE)
+
+Optical Comparator,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Optical Comparator,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Optical Comparator,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Optical Comparator,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Vision Measurement System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Vision Measurement System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Vision Measurement System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Vision Measurement System,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Vision Measurement System,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+Vision Measurement System,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Surface Profilometer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Surface Profilometer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Surface Profilometer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Surface Profilometer,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+Surface Profilometer,STD_ISO25178,ISO 25178,Test Method,Metrology,surface_texture=true,OQ,Surface texture verification
+
+Roundness Tester,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Roundness Tester,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Roundness Tester,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Roundness Tester,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Hardness Tester,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Hardness Tester,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Hardness Tester,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Hardness Tester,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+Hardness Tester,STD_ASTME18,ASTM E18,Test Method,Metrology,hardness_testing=true,OQ,Hardness scale verification
+
+Universal Testing Machine,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Universal Testing Machine,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Universal Testing Machine,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Universal Testing Machine,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+Universal Testing Machine,STD_ASTME4,ASTM E4,Test Method,Metrology,load_accuracy=true,OQ,Load cell accuracy verification
+
+Torque Testing System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Torque Testing System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Torque Testing System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Torque Testing System,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,torque_measurement=true,IQ;OQ,Calibration traceability
+
+Force Testing Stand,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Force Testing Stand,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Force Testing Stand,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Force Testing Stand,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,force_measurement=true,IQ;OQ,Calibration traceability
+
+Laser Micrometer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Laser Micrometer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Laser Micrometer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Laser Micrometer,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Thickness Gauge,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Thickness Gauge,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Thickness Gauge,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Thickness Gauge,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+pH Measurement System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+pH Measurement System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+pH Measurement System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+pH Measurement System,STD_USP791,USP <791>,Test Method,Analytical,pH_testing=true,OQ,Calibration and buffer verification
+pH Measurement System,STD_USP1058,USP <1058>,Process,Analytical,AIQ_group=BC,IQ;OQ,Analytical instrument qualification
+pH Measurement System,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+Conductivity Measurement System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Conductivity Measurement System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Conductivity Measurement System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+Conductivity Measurement System,STD_USP645,USP <645>,Test Method,Analytical,conductivity_testing=true,OQ,Water conductivity acceptance criteria
+Conductivity Measurement System,STD_USP1058,USP <1058>,Process,Analytical,AIQ_group=BC,IQ;OQ,Analytical instrument qualification
+Conductivity Measurement System,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+TOC Analyzer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+TOC Analyzer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+TOC Analyzer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+TOC Analyzer,STD_USP643,USP <643>,Test Method,Utilities,TOC_required=true,OQ;PQ,TOC acceptance criteria
+TOC Analyzer,STD_USP1058,USP <1058>,Process,Analytical,AIQ_group=BC,IQ;OQ;PQ,Analytical instrument qualification
+TOC Analyzer,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+TOC Analyzer,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+HPLC System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+HPLC System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+HPLC System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+HPLC System,STD_USP1058,USP <1058>,Process,Analytical,AIQ_group=C,IQ;OQ;PQ,Analytical instrument qualification
+HPLC System,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+HPLC System,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+GC/MS System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+GC/MS System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+GC/MS System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+GC/MS System,STD_USP467,USP <467>,Test Method,Analytical,residual_solvents=true,OQ;PQ,Residual solvent testing
+GC/MS System,STD_USP1058,USP <1058>,Process,Analytical,AIQ_group=C,IQ;OQ;PQ,Analytical instrument qualification
+GC/MS System,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+GC/MS System,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+FTIR Spectrometer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+FTIR Spectrometer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+FTIR Spectrometer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+FTIR Spectrometer,STD_USP1058,USP <1058>,Process,Analytical,AIQ_group=B,IQ;OQ,Analytical instrument qualification
+FTIR Spectrometer,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+UV-Vis Spectrophotometer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+UV-Vis Spectrophotometer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+UV-Vis Spectrophotometer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+UV-Vis Spectrophotometer,STD_USP1058,USP <1058>,Process,Analytical,AIQ_group=B,IQ;OQ,Analytical instrument qualification
+UV-Vis Spectrophotometer,STD_ISO17025,ISO/IEC 17025,Regulatory,Metrology,measurement_device=true,IQ;OQ,Calibration traceability
+
+General Laboratory Incubator,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+General Laboratory Incubator,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+General Laboratory Incubator,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+CO2 Cell Culture Incubator,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+CO2 Cell Culture Incubator,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+CO2 Cell Culture Incubator,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+Shaking Incubator,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Shaking Incubator,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Shaking Incubator,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+Benchtop Centrifuge,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Benchtop Centrifuge,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Benchtop Centrifuge,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+Refrigerated Centrifuge,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ,Validation requirement
+Refrigerated Centrifuge,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ,QMS alignment
+Refrigerated Centrifuge,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ,Risk-based validation
+
+Microplate Reader,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Microplate Reader,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Microplate Reader,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Microplate Reader,STD_USP1058,USP <1058>,Process,Analytical,AIQ_group=C,IQ;OQ;PQ,Analytical instrument qualification
+Microplate Reader,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Microplate Reader,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+Microplate Washer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Microplate Washer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Microplate Washer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Microplate Washer,STD_USP1058,USP <1058>,Process,Analytical,AIQ_group=B,IQ;OQ;PQ,Analytical instrument qualification
+
+Automated Liquid Handling System,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Automated Liquid Handling System,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Automated Liquid Handling System,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Automated Liquid Handling System,STD_USP1058,USP <1058>,Process,Analytical,AIQ_group=C,IQ;OQ;PQ,Analytical instrument qualification
+Automated Liquid Handling System,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Automated Liquid Handling System,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+Clinical Chemistry Analyzer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Clinical Chemistry Analyzer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Clinical Chemistry Analyzer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Clinical Chemistry Analyzer,STD_CLIA,CLIA,Regulatory,IVD,clinical_lab=true,IQ;OQ;PQ,Clinical laboratory requirements
+Clinical Chemistry Analyzer,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Clinical Chemistry Analyzer,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+Hematology Analyzer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Hematology Analyzer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Hematology Analyzer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Hematology Analyzer,STD_CLIA,CLIA,Regulatory,IVD,clinical_lab=true,IQ;OQ;PQ,Clinical laboratory requirements
+Hematology Analyzer,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Hematology Analyzer,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+
+Blood Gas Analyzer,STD_QMSR,21 CFR 820,Regulatory,Universal,all equipment,IQ;OQ;PQ,Validation requirement
+Blood Gas Analyzer,STD_ISO13485,ISO 13485:2016,Regulatory,Universal,all equipment,IQ;OQ;PQ,QMS alignment
+Blood Gas Analyzer,STD_ISO14971,ISO 14971:2019,Regulatory,Universal,all equipment,IQ;OQ;PQ,Risk-based validation
+Blood Gas Analyzer,STD_CLIA,CLIA,Regulatory,IVD,clinical_lab=true,IQ;OQ;PQ,Clinical laboratory requirements
+Blood Gas Analyzer,STD_21CFR11,21 CFR Part 11,Regulatory,Software,computerized=true,IQ;OQ,Audit trails and electronic records
+Blood Gas Analyzer,STD_IEC62304,IEC 62304,Process,Software,software_controls_quality=true,IQ;OQ,Software lifecycle validation
+

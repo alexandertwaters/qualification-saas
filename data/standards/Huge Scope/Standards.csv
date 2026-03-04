@@ -1,0 +1,64 @@
+standard_id,title,short_citation,region,applies_to
+FDA_QMSR,Quality Management System Regulation (QMSR),21 CFR Part 820,US,Generic;All categories
+ISO_13485,Medical devices — Quality management systems,ISO 13485:2016,US,Generic;All categories
+ISO_14971,Risk management for medical devices,ISO 14971:2019,US,Generic;All categories
+21CFR_11,Electronic records and signatures,21 CFR Part 11,US,Computerized systems;HPLC;LIMS;Labeling;Serialization;PLC / control system
+USP_1058,Analytical instrument qualification,USP <1058>,US,Balances;Analytical balance;HPLC;Spectrophotometer;TOC;GC;FTIR;PCR;qPCR;Clinical analyzers
+USP_1251,Analytical method validation (supplement),USP <1251>,US,Analytical methods;Balances;HPLC;Spectrophotometer
+USP_791,pH and conductivity,USP <791>,US,pH Meter;Conductivity Analyzer
+USP_643,Total Organic Carbon (TOC),USP <643>,US,TOC Analyzer;Water systems;WFI
+USP_1231,Water for Injection guidance,USP <1231>,US,WFI System;Pure Steam Generator
+USP_621,HPLC system suitability,USP <621>,US,HPLC System
+USP_467,Residual solvents,USP <467>,US,GC;GC/MS System
+USP_854,FTIR and spectroscopy,USP <854>,US,FTIR Spectrometer
+USP_788,Particulate matter in injections,USP <788>,US,Cleanroom monitoring;WFI;Lyophilizer outputs
+ISO_14644_1,Cleanrooms — Classification,ISO 14644-1,US,Cleanroom HVAC;FFU;Pass-Through;Cleanroom Chambers;WICR;Aseptic areas
+ISO_14644_3,Cleanrooms — Test methods,ISO 14644-3,US,FFU;HEPA;Cleanroom HVAC;Environmental monitoring instruments;Particle Counter
+ISO_14698,Biocontamination control,ISO 14698,US,Microbiological Air Sampler;Environmental Monitoring;Aseptic areas
+NSF_49,Biosafety cabinet certification,NSF/ANSI 49,US,Biosafety cabinet (BSC)
+ISO_17665,Steam sterilization,ISO 17665-1/2,US,Autoclave;Pure Steam Generator
+ISO_11138,Biological indicators for sterilization,ISO 11138,US,Autoclave;Sterilization PQ;BI kill studies
+AAMI_ST79,Steam sterilization guidance (healthcare),AAMI ST79,US,Autoclave
+ISO_11135,Ethylene oxide sterilization,ISO 11135,US,Ethylene Oxide sterilizer
+ISO_11137,Radiation sterilization (gamma/e-beam),ISO 11137-1/2,US,Gamma Irradiator;E-beam sterilizer
+ISO_14937,General sterilization validation,ISO 14937,US,VHP Generator;UV-C Sterilizer;Sterilization processes
+ISO_11607_1,Packaging for terminally sterilized devices (materials),ISO 11607-1,US,Pouch Sealer;Tray Sealer;Form-Fill-Seal;Packaging lines
+ISO_11607_2,Packaging for terminally sterilized devices (processes),ISO 11607-2,US,Pouch Sealer;Tray Sealer;Form-Fill-Seal;Packaging lines
+ASTM_F88,Seal strength test method,ASTM F88,US,Pouch Sealer;Pouch Sealer (Impulse);Tray Sealer
+ASTM_F1929,Dye penetration test for package integrity,ASTM F1929,US,Pouch Sealer;Packaging integrity testing
+ISO_17025,Testing and calibration laboratories,ISO/IEC 17025,US,Metrology;CMM;Surface Profilometer;Calibration Bath
+ISO_10360,CMM performance,ISO 10360,US,CMM
+ISO_25178,Surface texture (areal),ISO 25178,US,Surface Profilometer;Profilometry
+ASTM_E4,Tension testing machine methods,ASTM E4,US,Universal Testing Machine (UTM)
+ASTM_F1717,Spinal implant test methods,ASTM F1717,US,UTM;Implant mechanical testing
+ASTM_F543,Orthopedic screw testing,ASTM F543,US,Torsional Yield Tester;Bone Screw Torque Station
+IEC_60601,Medical electrical equipment safety,IEC 60601 series,US,Electrical safety tester;Imaging;X-ray bench;Clinical analyzers
+IEC_61010,Safety requirements for lab equipment,IEC 61010,US,Laboratory Incubator;HPLC;Spectrophotometer;Analytical instruments
+IEC_62304,Medical device software lifecycle,IEC 62304,US,PLC / control system;Software-controlled equipment;Computerized systems
+21CFR_1271,HCT/P regulations,21 CFR Part 1271,US,Cryogenic Vial Filling;Walk-In Cold Room;Controlled Rate Freezer;HCT/P processing equipment
+CLIA,Clinical Laboratory Improvement Amendments,CLIA,US,Clinical Chemistry Analyzer;Hematology Analyzer;Blood Gas Analyzer
+ISO_15189,Medical laboratories accreditation,ISO 15189,US,Clinical Chemistry Analyzer;IVD lab equipment
+ISO_20916,NGS sequencing practices,ISO 20916,US,DNA Sequencer
+NIST_HB44,Weights and measures guidance,NIST Handbook 44,US,Checkweigher;Balances;Analytical balance
+ISO_8573_1,Compressed air quality classes,ISO 8573-1,US,Compressed Air System;Process air
+ISO_11608,Needle-based delivery device standards,ISO 11608 series,US,Infusion pump;Syringe pump;Peristaltic pump
+ISO_10555,Intravascular catheter standards,ISO 10555 series,US,Balloon Forming Machine;Burst Pressure Tester
+ISO_10993,Biocompatibility testing series,ISO 10993 series,US,Implant processing equipment;Coating lines;Surface treatment
+ISO_13779_2,Hydroxyapatite coating standards,ISO 13779-2,US,Plasma Spray System;Coating lines
+ASTM_F1147,Coating test methods (HA coatings),ASTM F1147,US,Plasma Spray System;Coating adhesion testing
+ASTM_F2397,Coating and lubricity test methods,ASTM F2397,US,Hydrophilic Coating Line;Catheter Lubricity Tester
+ISO_13408_1,Aseptic processing — filling lines,ISO 13408-1,US,Cryogenic Vial Filling Line;Aseptic fillers
+ISO_15883,Washer-disinfector requirements,ISO 15883,US,Ultrasonic Cleaner;Washer;Parts washer
+AAMI_ST98,Washer-disinfector guidance,AAMI ST98,US,Ultrasonic Cleaner;Washer systems
+ISO_14937_VHP,VHP sterilization validation,ISO 14937,US,VHP Generator;Isolator decontamination
+ISO_14644_2,Cleanroom monitoring and testing,ISO 14644-2,US,Cleanroom HVAC;Environmental monitoring;Cleanroom certification
+ISO_14644_7,Cleanroom particle sampling,ISO 14644-7,US,Particle Counter;Environmental monitoring instruments
+ISO_14644_8,Cleanroom biocontamination control,ISO 14644-8,US,Microbiological Air Sampler;Aseptic areas
+USP_621_addendum,Chromatography system suitability (addenda),USP <621>,US,HPLC System
+21CFR_830,UDI and device identification,21 CFR Part 830,US,Labeling;Thermal Transfer Printer;Serialization
+21CFR_864,Hematology device classification,21 CFR Part 864,US,Hematology Analyzer
+ASTM_F1920,Package integrity and leak test methods,ASTM F1920,US,Packaging integrity;Seal testing
+ISO_10993_18,Chemical characterization for biocompatibility,ISO 10993-18,US,GC/MS System;Extractables & leachables testing
+USP_643_addendum,TOC method updates,USP <643>,US,TOC Analyzer;Water systems
+ISO_20391,Particle counter calibration guidance,ISO 20391,US,Particle Counter;Environmental monitoring
+ISO_14698_2,Biocontamination control — methods,ISO 14698-2,US,Microbiological Air Sampler;Environmental 

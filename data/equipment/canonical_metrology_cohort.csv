@@ -1,0 +1,13 @@
+canonical_name|category|subtype|key_attributes_schema|risk_level|process_standards|notes
+Analytical Balance|Metrology|Analytical Balance|{"measurement_type":"mass","readability_class":"string","environmentally_sensitive":"boolean","internal_calibration":"boolean"}|Medium|STD_USP_1058|Daily checks and environmental sensitivity drive control.
+Microbalance|Metrology|Microbalance|{"measurement_type":"mass","ultra_low_range":"boolean","environmentally_sensitive":"boolean","enclosure_present":"boolean"}|High|STD_USP_1058|Ultra-low mass measurement; highly sensitive to environment.
+Force / Torque Measurement System|Metrology|Force/Torque Tester|{"measurement_type":"string","range_class":"string","accuracy_class":"string","software_controlled":"boolean","has_audit_trail":"boolean"}|Medium|STD_ISO17025|Supports assembly and fastening validation.
+Dimensional Measurement Tool (Handheld)|Metrology|Handheld Dimensional Tool|{"measurement_type":"dimensional","resolution_class":"string","digital_readout":"boolean"}|Low|STD_ISO17025|Low-risk dimensional verification.
+Coordinate Measuring Machine (CMM)|Metrology|CMM|{"measurement_type":"dimensional","software_controlled":"boolean","measurement_volume_class":"string","accuracy_class":"string","temperature_compensated":"boolean","has_audit_trail":"boolean"}|High|STD_ISO10360|High-accuracy dimensional verification; software-driven.
+Optical / Vision Measurement System|Metrology|Optical Measurement System|{"measurement_type":"optical_dimensional","software_controlled":"boolean","has_audit_trail":"boolean","camera_resolution_class":"string"}|High|STD_ISO17025|Optics and software drive measurement validity.
+Environmental Probe (Temperature/Humidity)|Metrology|Environmental Probe|{"measurement_type":"environmental","parameters_measured":"array","accuracy_class":"string","continuous_monitoring":"boolean"}|Medium|STD_ISO17025|Facility and storage monitoring; drift control critical.
+Particle Counter (Airborne)|Metrology|Particle Counter|{"measurement_type":"particle_count","flow_rate_class":"string","channel_count":"number","portable":"boolean"}|High|STD_ISO14644|Cleanroom classification and certification.
+Surface Profilometer|Metrology|Surface Profilometer|{"measurement_type":"surface","resolution_class":"string","contact_method":"string"}|Medium|STD_ISO25178|Surface finish verification.
+Universal Testing Machine (UTM)|Metrology|Universal Testing Machine|{"measurement_type":"mechanical","load_capacity_class":"string","accuracy_class":"string","software_controlled":"boolean","has_audit_trail":"boolean"}|High|STD_ASTM_E4|Mechanical property verification.
+
+

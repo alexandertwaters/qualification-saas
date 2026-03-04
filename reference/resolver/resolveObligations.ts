@@ -36,21 +36,28 @@ export function resolveObligations(
     throw new Error("includeDeprecated must be explicitly true or false")
   }
 
-  // Deterministic selection logic
-  return obligations.filter(obligation => {
-
+  // Deterministic selection logic (Resolver Selection Logic Contract v1.0)
+  return obligations.filter((obligation) => {
     // Domain filtering
     if (!context.selectedDomains.includes(obligation.domain)) {
-      return false
+      return false;
+    }
+
+    // Equipment applicability filtering
+    const app = obligation.equipment_applicability;
+    if (context.equipmentCohort !== app.cohort) {
+      return false;
+    }
+    if (!app.equipment_types.includes(context.equipmentType)) {
+      return false;
     }
 
     // Lifecycle filtering
-    if (!context.includeDeprecated && obligation.lifecycle_status !== "active") {
-      return false
+    if (!context.includeDeprecated && obligation.lifecycle.status !== "active") {
+      return false;
     }
 
-
-    return true
-  })
+    return true;
+  });
 }
 

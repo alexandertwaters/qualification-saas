@@ -1,0 +1,40 @@
+standard_id,code,title,authority,standard_role,domain,region,applies_to,conditional_on,primary_use,key_requirements,notes
+STD_QMSR,21 CFR 820,Quality Management System Regulation,FDA,Regulatory,Quality System,US,All categories,,Validation requirement driver,Process validation;documentation;change control,Foundation for all IQ/OQ/PQ
+STD_ISO13485,ISO 13485:2016,Medical Device Quality Management System,ISO,Regulatory,Quality System,US,All categories,,QMS alignment,Design & production controls,Referenced by FDA QMSR
+STD_ISO14971,ISO 14971:2019,Risk Management for Medical Devices,ISO,Regulatory,Risk,US,All categories,,Risk-based validation,FMEA;hazard control,Drives validation depth
+STD_21CFR11,21 CFR Part 11,Electronic Records and Signatures,FDA,Regulatory,Data Integrity,US,Computerized systems,computerized=true,CSV requirement,Audit trails;access control;data integrity,Applies only to computerized equipment
+STD_IEC62304,IEC 62304,Medical Device Software Lifecycle,IEC,Process,Software,US,Computerized systems,software_controls_quality=true,Software validation,SDLC;maintenance;change mgmt,Used for CSV scope
+STD_IEC62366,IEC 62366-1,Usability Engineering for Medical Devices,IEC,Process,Human Factors,US,User-facing equipment,user_interface=true,Use error mitigation,UI risk analysis,Applies to operator interfaces
+STD_ISO17665,ISO 17665,Moist Heat Sterilization,ISO,Process,Sterilization,US,Steam Sterilizer,,Sterilization validation,BI kill;cycle development,Autoclave PQ driver
+STD_ISO11138,ISO 11138,Biological Indicators for Sterilization,ISO,Test Method,Sterilization,US,Steam Sterilizer,,BI qualification,BI selection;population,Required for PQ
+STD_ISO11135,ISO 11135,Ethylene Oxide Sterilization,ISO,Process,Sterilization,US,Ethylene Oxide Sterilizer,,EtO validation,Residuals;fractional cycles,EO-specific
+STD_ISO11137,ISO 11137,Radiation Sterilization,ISO,Process,Sterilization,US,Radiation Sterilization,,Dose validation,Dose mapping;dosimetry,Contract sterilization
+STD_ISO14937,ISO 14937,General Sterilization Validation,ISO,Process,Sterilization,US,VHP Decontamination System,,Non-traditional sterilization,Cycle development;BI use,Used when no specific ISO exists
+STD_ISO11607_1,ISO 11607-1,Packaging Materials for Sterile Barrier Systems,ISO,Process,Packaging,US,Heat Sealing Equipment;Form-Fill-Seal Machine,,Packaging design,Material selection,Part 1
+STD_ISO11607_2,ISO 11607-2,Packaging Process Validation,ISO,Process,Packaging,US,Heat Sealing Equipment;Form-Fill-Seal Machine,,Seal validation,Process limits;OQ/PQ,Part 2
+STD_ASTMF88,ASTM F88,Seal Strength Test Method,ASTM,Test Method,Packaging,US,Seal Strength Testing System,,Seal integrity testing,Peel force measurement,Common PQ test
+STD_ASTMF1929,ASTM F1929,Dye Penetration Test Method,ASTM,Test Method,Packaging,US,Dye Penetration Testing Station,,Package integrity,Dye ingress,Visual integrity test
+STD_ASTMF1140,ASTM F1140,Burst Testing of Packages,ASTM,Test Method,Packaging,US,Burst Testing System,,Package strength,Burst pressure,Packaging PQ support
+STD_ISO14644_1,ISO 14644-1,Cleanroom Classification,ISO,Regulatory,Cleanroom,US,Cleanroom HVAC System;HEPA Filtration Unit,,Environmental control,Particle limits,Class 5–8
+STD_ISO14644_3,ISO 14644-3,Cleanroom Test Methods,ISO,Process,Cleanroom,US,Cleanroom HVAC System;HEPA Filtration Unit,,Certification testing,Airflow;PAO testing,Annual certification
+STD_ISO14698,ISO 14698,Biocontamination Control,ISO,Process,Cleanroom,US,Environmental Monitoring System,,Viable monitoring,Sampling plans,Environmental monitoring
+STD_NSF49,NSF/ANSI 49,Biosafety Cabinets,NSF,Regulatory,Containment,US,Biosafety Cabinet,,Operator protection,Airflow;HEPA integrity,Annual certification
+STD_ISO8573,ISO 8573-1,Compressed Air Quality,ISO,Process,Utilities,US,Compressed Air System,,Air purity,Oil;water;particles,Process air
+STD_USP1058,USP <1058>,Analytical Instrument Qualification,USP,Process,Analytical,US,Analytical instruments,,AIQ framework,IQ/OQ/PQ groups,Lab instruments
+STD_USP791,USP <791>,pH Measurement,USP,Test Method,Analytical,US,pH Measurement System,,Calibration,Buffer verification,Daily checks
+STD_USP643,USP <643>,Total Organic Carbon,USP,Test Method,Utilities,US,TOC Analyzer,,Water quality,TOC limits,Water validation
+STD_USP1231,USP <1231>,Water Systems,USP,Process,Utilities,US,Water for Injection System;Purified Water System,,Water validation,Phase I–III,Utilities PQ
+STD_ISO10360,ISO 10360,CMM Performance Verification,ISO,Test Method,Metrology,US,Coordinate Measuring Machine,,Accuracy verification,Artifacts;MPE,Dimensional control
+STD_ASTME4,ASTM E4,Tensile Testing Machines,ASTM,Test Method,Metrology,US,Universal Testing Machine,,Load accuracy,Load cell verification,Mechanical testing
+STD_ISO25178,ISO 25178,Surface Texture (Areal),ISO,Test Method,Metrology,US,Surface Profilometer,,Surface finish,Ra/Rz metrics,Implants
+STD_NISTHB44,NIST HB 44,Weights and Measures,NIST,Regulatory,Metrology,US,Dynamic Checkweigher,,Measurement accuracy,Traceability,Commercial weighing
+STD_ISO17025,ISO/IEC 17025,Calibration Laboratories,ISO,Regulatory,Metrology,US,Calibrated equipment,,Calibration competence,Traceability;uncertainty,External labs
+STD_CLIA,CLIA,Clinical Laboratory Regulation,CDC,Regulatory,IVD,US,IVD analyzers,,Clinical compliance,QC;controls,Clinical labs
+STD_21CFR1271,21 CFR 1271,HCT/P Regulation,FDA,Regulatory,Tissue,US,Cryogenic Storage System;Controlled Rate Freezer,,Tissue handling,Environmental control,Cell therapy
+STD_21CFR830,21 CFR 830,UDI Regulation,FDA,Regulatory,Labeling,US,UDI Label Printing System,,Device identification,Barcode quality,UDI compliance
+STD_ASTMF2397,ASTM F2397,Coating Lubricity Testing,ASTM,Test Method,Surface Treatment,US,Adhesive Dispensing System,,Lubricity validation,Friction testing,Catheters
+STD_ASTMF1147,ASTM F1147,Coating Adhesion Testing,ASTM,Test Method,Surface Treatment,US,Plasma Spray System,,Coating integrity,Adhesion strength,Implants
+STD_ISO13779,ISO 13779-2,Hydroxyapatite Coatings,ISO,Process,Surface Treatment,US,Plasma Spray System,,Implant coatings,Crystallinity;adhesion,Orthopedics
+
+
+

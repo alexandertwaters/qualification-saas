@@ -1,0 +1,34 @@
+{
+  "control_domain_id": "string",
+  "name": "string",
+  "description": "string",
+
+  "applicability_context": {
+    "type": "object",
+    "description": "Conditions that activate this domain."
+  },
+  "exclusion_conditions": {
+    "type": "object"
+  },
+
+  "lifecycle_phases": ["IQ", "OQ", "PQ"],
+  "default_sections_by_phase": {
+    "IQ": "string",
+    "OQ": "string",
+    "PQ": "string"
+  },
+
+  "core_evidence_types": ["procedure", "record", "training", "access_log", "audit_trail"],
+  "required_artifacts": ["string"],
+
+  "scaling_factors": ["string"],
+  "scaling_rules": {
+    "type": "object",
+    "description": "Declarative rules for scaling rigor."
+  },
+
+  "controlled_terms": ["string"],
+  "internal_notes": "string",
+  "status": "draft | reviewed | approved | deprecated",
+  "version": "string"
+}

@@ -1,0 +1,12 @@
+HPLC System|Analytical|HPLC System|{"instrument_class":"chromatography","software_controlled":"boolean","has_audit_trail":"boolean","detector_types":"array"}|High|STD_USP1058;STD_USP621
+GC/MS System|Analytical|GC/MS System|{"instrument_class":"chromatography","software_controlled":"boolean","has_audit_trail":"boolean"}|High|STD_USP1058;STD_USP467
+FTIR Spectrometer|Analytical|FTIR Spectrometer|{"instrument_class":"spectroscopy","software_controlled":"boolean"}|Medium|STD_USP1058;STD_USP854
+UV-Vis Spectrophotometer|Analytical|UV-Vis Spectrophotometer|{"instrument_class":"spectroscopy","software_controlled":"boolean"}|Medium|STD_USP1058
+TOC Analyzer|Analytical|TOC Analyzer|{"instrument_class":"water_quality","software_controlled":"boolean","has_audit_trail":"boolean"}|High|STD_USP643;STD_USP1058
+pH Measurement System|Analytical|pH Measurement System|{"instrument_class":"electrochemical","software_controlled":"boolean"}|Medium|STD_USP791;STD_USP1058
+Conductivity Measurement System|Analytical|Conductivity Measurement System|{"instrument_class":"electrochemical","software_controlled":"boolean"}|Medium|STD_USP645;STD_USP1058
+General Laboratory Incubator|Analytical|Laboratory Incubator|{"temperature_controlled":"boolean","humidity_controlled":"boolean"}|Medium|STD_QMS;STD_IEC61010
+CO2 Cell Culture Incubator|Analytical|CO2 Incubator|{"temperature_controlled":"boolean","co2_controlled":"boolean","humidity_controlled":"boolean"}|High|STD_QMS;STD_IEC61010
+Benchtop Centrifuge|Analytical|Benchtop Centrifuge|{"max_rpm":"number","refrigeration":"boolean"}|Medium|STD_QMS;STD_IEC61010
+Refrigerated Centrifuge|Analytical|Refrigerated Centrifuge|{"max_rpm":"number","temperature_controlled":"boolean"}|Medium|STD_QMS;STD_IEC61010
+Microplate Reader|Analytical|Microplate Reader|{"software_controlled":"boolean","has_audit_trail":"boolean"}|High|STD_USP1058

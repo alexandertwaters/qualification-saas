@@ -15,6 +15,12 @@ The authoritative ontology is published as cohort-split artifacts in:
 
 - `ontology/cohorts/`
 
+Format: `Equipment Name|Cohort|Equipment Type ID|{attributes}|Risk|Standards` (no header row)
+
+## Canonical reference
+
+`data/equipment/canonical_*_cohort.csv` holds the canonical equipment catalog in Validation SaaS format (with header and notes). Ontology cohorts are aligned with this reference.
+
 ## Archive
 
 Historical snapshots are retained in:

@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Validation SaaS
 
-## Getting Started
+IQ, OQ, and PQ draft protocol template generation for medical device equipment qualification in the United States. Advisory, draft-oriented system based on equipment catalog, standards/obligations catalog, and protocol templates.
 
-First, run the development server:
+## Project structure (converged)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+qualification_saas/
+├── app/                    # Next.js App Router (pages, layout)
+├── src/resolver/           # Resolver engine (catalog loading, validation, draft API)
+├── reference/              # Obligations catalog, resolver, protocol renderer
+├── contracts/              # JSON schemas (draft request/response), obligation schema
+├── contract/               # Constitutional docs (resolver contract, executive summary)
+├── ontology/cohorts/       # Equipment ontology (resolver source)
+├── data/                   # Source data (consolidated)
+│   ├── standards/          # Standards catalog (ISO, FDA, USP, etc.)
+│   ├── obligations/        # Obligation CSV source files
+│   ├── domains/            # Control domain definitions
+│   ├── mappings/           # Equipment–standard mappings
+│   ├── equipment/          # Canonical equipment catalogs (reference)
+│   └── schema/             # JSON schemas for obligations, domains
+├── examples/               # Example resolver outputs
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Getting started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+CATALOG_VERSION=stub npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Key concepts
 
-To learn more about Next.js, take a look at the following resources:
+- **Equipment catalog:** `ontology/cohorts/` — cohort-split CSVs consumed by the resolver
+- **Obligations:** `reference/obligations/obligationCatalog.ts` — derived from `data/obligations/`
+- **Standards:** `data/standards/` — standards catalog used for obligation traceability
+- **Contracts:** `contracts/` and `contract/` — schemas and constitutional boundaries
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```

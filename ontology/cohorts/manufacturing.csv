@@ -1,0 +1,6 @@
+Injection Molding Machine|Manufacturing|Injection Molding Machine|{"process_type":"molding","software_controlled":"boolean","special_process":"boolean"}|High|STD_QMSR;STD_ISO13485
+Medical Extrusion Line|Manufacturing|Medical Extrusion Line|{"process_type":"extrusion","software_controlled":"boolean","special_process":"boolean"}|High|STD_QMSR;STD_ISO13485
+CNC Machining Center|Manufacturing|CNC Machining Center|{"process_type":"machining","software_controlled":"boolean","has_audit_trail":"boolean"}|High|STD_QMSR;STD_21CFR11;STD_IEC62304
+CNC Turning Center|Manufacturing|CNC Turning Center|{"process_type":"machining","software_controlled":"boolean","has_audit_trail":"boolean"}|High|STD_QMSR;STD_21CFR11;STD_IEC62304
+Laser Cutting System|Manufacturing|Laser Cutting System|{"process_type":"cutting","software_controlled":"boolean"}|High|STD_QMSR;STD_21CFR11;STD_IEC62304
+Plasma Spray System|Manufacturing|Plasma Spray System|{"process_type":"coating","coating_type":"HA","software_controlled":"boolean"}|High|STD_ISO13779;STD_ASTMF1147

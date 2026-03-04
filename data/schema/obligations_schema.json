@@ -1,0 +1,43 @@
+{
+  "obligation_id": "string",
+  "standard_id": "string",
+  "standard_code": "string",
+  "obligation_priority": "integer",
+  "topic": "string",
+
+  "validation_intent": "string",
+
+  "applicability_context": {
+    "type": "object",
+    "description": "Key-value conditions that must be true for the obligation to apply."
+  },
+  "exclusion_conditions": {
+    "type": "object",
+    "description": "Optional conditions that explicitly exclude applicability."
+  },
+
+  "protocol_impact": ["IQ", "OQ", "PQ"],
+  "section_binding": "string",
+
+  "evidence_types": ["procedure", "record", "test_data", "calibration", "training", "observation"],
+  "inputs_required": ["string"],
+  "outputs_generated": ["string"],
+
+  "technical_expression": "string",
+  "plain_language_expression": "string",
+
+  "depth_modifiers": {
+    "type": "object",
+    "description": "Risk-based scaling rules."
+  },
+
+  "control_domains": [
+    {
+      "control_domain_id": "string",
+      "binding_role": "primary | supporting"
+    }
+  ],
+
+  "trace_notes": "string",
+  "status": "draft | reviewed | approved | deprecated"
+}

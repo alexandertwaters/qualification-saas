@@ -87,7 +87,7 @@
               "required": ["standard_id", "clause_reference"],
               "properties": {
                 "standard_id": {
-                  "$ref": "#/$defs/catalog_id"
+                  "$ref": "#/$defs/standard_ref"
                 },
                 "clause_reference": {
                   "type": "string"
@@ -101,6 +101,12 @@
   },
 
   "$defs": {
+    "standard_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "description": "Human-readable standard identifier (e.g. 21 CFR 820, ISO 17665)"
+    },
     "qualification_phase": {
       "type": "string",
       "enum": ["IQ", "OQ", "PQ"]

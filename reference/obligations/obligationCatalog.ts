@@ -106,6 +106,7 @@ const steamObligations: Obligation[] = [
     {
       verification_expectation:
         "Document and control cycle recipes, setpoints, alarms, interlocks, and configuration baselines.",
+      required_capabilities: ["SOFTWARE_CONTROLLED"],
     }
   ),
   ob(
@@ -210,7 +211,9 @@ const steamObligations: Obligation[] = [
     "Parametric release controls defined",
     "Conditions and evidence required for parametric release are defined when applicable.",
     steamSterilizer,
-    "ISO 17665"
+    "ISO 17665",
+    undefined,
+    { required_capabilities: ["HAS_DATA_LOGGER"] }
   ),
   ob(
     "OBL_ISO17665_STEAM_0017",
@@ -291,7 +294,9 @@ const ffsObligations: Obligation[] = [
     "Control system configuration defined",
     "Cycle recipes, alarms, interlocks, and configuration baselines are defined and controlled.",
     ffsEquipment,
-    "ISO 11607-2"
+    "ISO 11607-2",
+    undefined,
+    { required_capabilities: ["SOFTWARE_CONTROLLED"] }
   ),
   ob(
     "OBL_ISO11607_2_FFS_0005",
@@ -381,7 +386,9 @@ const tissueObligations: Obligation[] = [
     "Temperature probes and loggers calibrated",
     "Temperature probes and data loggers are calibrated and traceable.",
     tissueRefrigerator,
-    "21 CFR 1271"
+    "21 CFR 1271",
+    undefined,
+    { required_capabilities: ["HAS_DATA_LOGGER"] }
   ),
   ob(
     "OBL_TISSUE_FRIDGE_0004",
@@ -390,7 +397,9 @@ const tissueObligations: Obligation[] = [
     "Alarm thresholds and notification defined",
     "Alarm thresholds, delays, escalation paths, and notification routing are defined and verified.",
     tissueRefrigerator,
-    "21 CFR 1271"
+    "21 CFR 1271",
+    undefined,
+    { required_capabilities: ["HAS_ALARM"] }
   ),
   ob(
     "OBL_TISSUE_FRIDGE_0005",
@@ -399,7 +408,9 @@ const tissueObligations: Obligation[] = [
     "Access control and custody procedures defined",
     "Access control, authorized handlers, and chain-of-custody procedures are defined.",
     tissueRefrigerator,
-    "21 CFR 1271"
+    "21 CFR 1271",
+    undefined,
+    { required_capabilities: ["ACCESS_CONTROL_RESTRICTED"] }
   ),
   ob(
     "OBL_TISSUE_FRIDGE_0006",
@@ -444,7 +455,9 @@ const tissueObligations: Obligation[] = [
     "Alarm verification under challenge",
     "Alarm thresholds, delays, and escalation paths are verified under challenge conditions.",
     tissueRefrigerator,
-    "21 CFR 1271"
+    "21 CFR 1271",
+    undefined,
+    { required_capabilities: ["HAS_ALARM"] }
   ),
   ob(
     "OBL_TISSUE_FRIDGE_0013",
@@ -453,7 +466,9 @@ const tissueObligations: Obligation[] = [
     "Data logging and review controls defined",
     "Data logging intervals, retention, review frequency, and audit trail expectations are defined.",
     tissueRefrigerator,
-    "21 CFR 1271"
+    "21 CFR 1271",
+    undefined,
+    { required_capabilities: ["HAS_DATA_LOGGER"] }
   ),
   ob(
     "OBL_TISSUE_FRIDGE_0014",
@@ -489,7 +504,9 @@ const tissueObligations: Obligation[] = [
     "Chain-of-custody verified during routine use",
     "Custody events, authorized handlers, and access logs are verified during routine use.",
     tissueRefrigerator,
-    "21 CFR 1271"
+    "21 CFR 1271",
+    undefined,
+    { required_capabilities: ["ACCESS_CONTROL_RESTRICTED"] }
   ),
   ob(
     "OBL_TISSUE_FRIDGE_0023",
@@ -552,7 +569,9 @@ const emsObligations: Obligation[] = [
     "EMS configuration defined and controlled",
     "System configuration, alarm thresholds, and data collection parameters are documented and controlled.",
     emsEquipment,
-    "21 CFR Part 11"
+    "21 CFR Part 11",
+    undefined,
+    { required_capabilities: ["SOFTWARE_CONTROLLED"] }
   ),
   ob(
     "OBL_EMS_0004",
@@ -570,7 +589,9 @@ const emsObligations: Obligation[] = [
     "Alarm response verified",
     "Alarm and alert behavior is verified under defined out-of-limits conditions.",
     emsEquipment,
-    "ISO 14698"
+    "ISO 14698",
+    undefined,
+    { required_capabilities: ["HAS_ALARM"] }
   ),
   ob(
     "OBL_EMS_0006",
@@ -579,7 +600,9 @@ const emsObligations: Obligation[] = [
     "Data integrity and audit trail verified",
     "Data logging integrity, audit trail capability, and review controls are verified.",
     emsEquipment,
-    "21 CFR Part 11"
+    "21 CFR Part 11",
+    undefined,
+    { required_capabilities: ["HAS_AUDIT_TRAIL"] }
   ),
   ob(
     "OBL_EMS_0007",
@@ -642,7 +665,9 @@ const balanceObligations: Obligation[] = [
     "Alarm and status indications verified",
     "The instrument provides appropriate alarm, warning, or status indications under abnormal conditions.",
     balanceEquipment,
-    "IEC 61010"
+    "IEC 61010",
+    undefined,
+    { required_capabilities: ["HAS_ALARM"] }
   ),
   ob(
     "OBL_BALANCE_0006",

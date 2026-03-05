@@ -131,7 +131,7 @@ The following are **excluded** from MVP scope:
 - **Vercel source:** `main` branch of GitHub repo
 - **Git:** Initialized and remote configured
 
-To push changes and trigger a Vercel deploy:
+To push changes and trigger a Vercel deploy: **done**
 
 ```bash
 cd c:\projects\qualification_saas
@@ -147,25 +147,25 @@ git push origin main   # or merge your branch into main first
 
 ## 5. Supabase deliverables
 
-### 5.1 Create project
+### 5.1 Create project **done**
 
 1. [supabase.com](https://supabase.com) → New project
 2. Name, region, database password
 3. Wait for provisioning
 
-### 5.2 Enable Auth
+### 5.2 Enable Auth **done**
 
 1. Authentication → Providers → Email (enable)
 2. Optional: Google, GitHub, etc.
-3. Auth → URL configuration: set site URL (e.g. `https://your-app.vercel.app`)
+3. Auth → URL configuration: set site URL (e.g. `https://validation-saas.vercel.app/`)
 4. Add redirect URLs for local dev: `http://localhost:3000`, `http://localhost:3000/**`
 
-### 5.3 Create tables (minimal)
+### 5.3 Create tables (minimal) **done**
 
 Run in SQL editor:
 
 ```sql
--- Projects (validation jobs)
+-- Projects (validation jobs) **done**
 CREATE TABLE projects (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
@@ -180,7 +180,7 @@ CREATE TABLE projects (
   updated_at TIMESTAMPTZ DEFAULT now()
 );
 
--- Protocols (generated drafts)
+-- Protocols (generated drafts) **done**
 CREATE TABLE protocols (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   project_id UUID REFERENCES projects(id) ON DELETE CASCADE,
@@ -191,7 +191,7 @@ CREATE TABLE protocols (
   created_at TIMESTAMPTZ DEFAULT now()
 );
 
--- Row-level security
+-- Row-level security **done**
 ALTER TABLE projects ENABLE ROW LEVEL SECURITY;
 ALTER TABLE protocols ENABLE ROW LEVEL SECURITY;
 
@@ -210,7 +210,7 @@ CREATE POLICY "Users can manage protocols for own projects"
 ### 5.4 API keys
 
 1. Settings → API
-2. Copy `Project URL` and `anon` (public) key for Vercel env
+2. Copy `Project URL` and `anon` (public) key for Vercel env **done**
 3. Optional: `service_role` key for server-only admin tasks (keep secret)
 
 ---
@@ -221,27 +221,27 @@ CREATE POLICY "Users can manage protocols for own projects"
 
 GitHub is already connected. Source: `main` branch of [qualification_saas](https://github.com/alexandertwaters/qualification_saas).
 
-### 6.2 Environment variables
+### 6.2 Environment variables **done**
 
 In Project → Settings → Environment Variables add:
 
 | Name | Value | Notes |
 |------|-------|-------|
-| `CATALOG_VERSION` | `stub` | Catalog version |
-| `NEXT_PUBLIC_SUPABASE_URL` | From Supabase | Project URL |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | From Supabase | Anon key |
+| `CATALOG_VERSION` | `stub` | Catalog version | **What do i input here, 'stub' or stub, is that the correct environment variable for the active catalog?**
+| `NEXT_PUBLIC_SUPABASE_URL` | From Supabase | Project URL | **done**
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | From Supabase | Anon key | **done**
 
-### 6.3 Build settings
+### 6.3 Build settings **done**
 
-- Build command: `npm run build` (default)
-- Output directory: `.next` (default)
-- Install command: `npm install` (default)
+- Build command: `npm run build` (default) **done - default 'npm run build' or'next build'**
+- Output directory: `.next` (default) **done- Next.js default**
+- Install command: `npm install` (default) **done - 'yarn install', 'pnpm install', 'npm install', or 'bun install'**
 
 ### 6.4 Deploy
 
 1. Save env vars
 2. Redeploy (or push to `main` for automatic deploys)
-3. Open the deployed URL and test protocol generation
+3. Open the deployed URL and test protocol generation **protocol generation is lacking. while a general template to incorporate the obligations and standards into has not yet been provided, the frame that is present is lacking. for every obligation, i need the applicable standard(s) referenced beside that obligation, not a "-". Furthermore, After equipment selection and equipment type selection, the "selection paramters", i.e., use case and capabilities, seem to be static and do not reflect actual applicable use cases or capabilities for the selected equipment and cohort type. The use case and capabilities need to reflect actual actual use cases and capabilities for the selected cohort and equipment type. Additionally, applicable standards and subsequent obligations that are applicable to the generated draft protocol rely on accurate use case and capabilities for selected cohort and equipment type as different use cases and capabilities alter scope of standards applicability and subsequent obligation inclusion/exclusion. Also, i have created a Stripe account and a Resend account**
 
 ### 6.5 Custom domain (optional)
 
@@ -251,8 +251,8 @@ Project → Settings → Domains → Add (e.g. `app.yourdomain.com`)
 
 ## 7. Immediate sequence
 
-1. Merge `chore/resolver-contract-v1-clarify-versioning-nongoals` into `main` (or push to `main`) and confirm Vercel deploys  
-2. Create Supabase project and run SQL for `projects` and `protocols`  
+1. Merge `chore/resolver-contract-v1-clarify-versioning-nongoals` into `main` (or push to `main`) and confirm Vercel deploys  **done**
+2. Create Supabase project and run SQL for `projects` and `protocols` **done** 
 3. Add Supabase env vars in Vercel  
 4. Implement Supabase Auth (signup, login) and protected routes  
 5. Implement draft storage and revisitation (My drafts / dashboard with list of generated drafts)  

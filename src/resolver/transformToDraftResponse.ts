@@ -57,13 +57,14 @@ function obligationToResolved(
     obligation.verification_expectation ?? obligation.description;
 
   const standardsReferences = obligation.standards_anchors
-    ?.map((a) => ({
-      standard_id: toCatalogId(a.standard),
-      clause_reference: a.clause ?? ""
-    }))
+    ?.map((a) => {
+      const raw = a.standard?.trim();
+      if (!raw) return null;
+      return { standard_id: raw, clause_reference: a.clause ?? "" };
+    })
     .filter(
       (r): r is { standard_id: string; clause_reference: string } =>
-        r.standard_id !== null
+        r !== null && !!r.standard_id
     );
 
   const result: DraftResponse["resolved_obligations"][0] = {
@@ -81,17 +82,3 @@ function obligationToResolved(
   return result;
 }
 
-/**
- * Map standard name to catalog_id format (^[A-Z][A-Z0-9_]*$).
- * Returns null if not mappable.
- */
-function toCatalogId(standard: string): string | null {
-  if (!standard?.trim()) return null;
-  const normalized = standard
-    .trim()
-    .replace(/\s+/g, "_")
-    .replace(/[^A-Za-z0-9_]/g, "")
-    .toUpperCase();
-  if (normalized.length === 0 || !/^[A-Z]/.test(normalized)) return null;
-  return normalized.startsWith("STD_") ? normalized : `STD_${normalized}`;
-}

@@ -55,7 +55,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the system generates a secure time-stamped audit trail for creation modification and deletion of electronic records.",
       acceptance_criteria: "Audit trail is generated and is secure time-stamped and attributable; record changes do not obscure previously recorded information.",
-      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records."
+      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records.",
+      required_capabilities: ["HAS_AUDIT_TRAIL"]
     }
   ),
   ob(
@@ -79,7 +80,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the system generates a secure time-stamped audit trail for creation modification and deletion of electronic records.",
       acceptance_criteria: "Audit trail is generated and is secure time-stamped and attributable; record changes do not obscure previously recorded information.",
-      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records."
+      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records.",
+      required_capabilities: ["HAS_AUDIT_TRAIL"]
     }
   ),
   ob(
@@ -106,7 +108,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the system generates a secure time-stamped audit trail for creation modification and deletion of electronic records.",
       acceptance_criteria: "Audit trail is generated and is secure time-stamped and attributable; record changes do not obscure previously recorded information.",
-      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records."
+      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records.",
+      required_capabilities: ["HAS_AUDIT_TRAIL"]
     }
   ),
   ob(
@@ -133,7 +136,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the system generates a secure time-stamped audit trail for creation modification and deletion of electronic records.",
       acceptance_criteria: "Audit trail is generated and is secure time-stamped and attributable; record changes do not obscure previously recorded information.",
-      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records."
+      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records.",
+      required_capabilities: ["HAS_AUDIT_TRAIL"]
     }
   ),
   ob(
@@ -155,7 +159,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the system generates a secure time-stamped audit trail for creation modification and deletion of electronic records.",
       acceptance_criteria: "Audit trail is generated and is secure time-stamped and attributable; record changes do not obscure previously recorded information.",
-      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records."
+      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records.",
+      required_capabilities: ["HAS_AUDIT_TRAIL"]
     }
   ),
   ob(
@@ -177,7 +182,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the system generates a secure time-stamped audit trail for creation modification and deletion of electronic records.",
       acceptance_criteria: "Audit trail is generated and is secure time-stamped and attributable; record changes do not obscure previously recorded information.",
-      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records."
+      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records.",
+      required_capabilities: ["HAS_AUDIT_TRAIL"]
     }
   ),
   ob(
@@ -199,7 +205,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the system generates a secure time-stamped audit trail for creation modification and deletion of electronic records.",
       acceptance_criteria: "Audit trail is generated and is secure time-stamped and attributable; record changes do not obscure previously recorded information.",
-      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records."
+      rationale: "21 CFR 11.10(e) requires secure audit trails for electronic records.",
+      required_capabilities: ["HAS_AUDIT_TRAIL"]
     }
   ),
   ob(
@@ -219,7 +226,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that system access is limited to authorized individuals and that authority checks are in place.",
       acceptance_criteria: "Access control is implemented and only authorized individuals can use the system.",
-      rationale: "21 CFR 11.10(d) requires limiting system access to authorized individuals."
+      rationale: "21 CFR 11.10(d) requires limiting system access to authorized individuals.",
+      required_capabilities: ["ACCESS_CONTROL_RESTRICTED"]
     }
   ),
   ob(
@@ -243,7 +251,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that system access is limited to authorized individuals and that authority checks are in place.",
       acceptance_criteria: "Access control is implemented and only authorized individuals can use the system.",
-      rationale: "21 CFR 11.10(d) requires limiting system access to authorized individuals."
+      rationale: "21 CFR 11.10(d) requires limiting system access to authorized individuals.",
+      required_capabilities: ["ACCESS_CONTROL_RESTRICTED"]
     }
   ),
   ob(
@@ -268,7 +277,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that system access is limited to authorized individuals and that authority checks are in place.",
       acceptance_criteria: "Access control is implemented and only authorized individuals can use the system.",
-      rationale: "21 CFR 11.10(d) requires limiting system access to authorized individuals."
+      rationale: "21 CFR 11.10(d) requires limiting system access to authorized individuals.",
+      required_capabilities: ["ACCESS_CONTROL_RESTRICTED"]
     }
   ),
   ob(
@@ -291,7 +301,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that system access is limited to authorized individuals and that authority checks are in place.",
       acceptance_criteria: "Access control is implemented and only authorized individuals can use the system.",
-      rationale: "21 CFR 11.10(d) requires limiting system access to authorized individuals."
+      rationale: "21 CFR 11.10(d) requires limiting system access to authorized individuals.",
+      required_capabilities: ["ACCESS_CONTROL_RESTRICTED"]
     }
   ),
   ob(
@@ -313,7 +324,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that system access is limited to authorized individuals and that authority checks are in place.",
       acceptance_criteria: "Access control is implemented and only authorized individuals can use the system.",
-      rationale: "21 CFR 11.10(d) requires limiting system access to authorized individuals."
+      rationale: "21 CFR 11.10(d) requires limiting system access to authorized individuals.",
+      required_capabilities: ["ACCESS_CONTROL_RESTRICTED"]
     }
   ),
   ob(
@@ -335,7 +347,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that system access is limited to authorized individuals and that authority checks are in place.",
       acceptance_criteria: "Access control is implemented and only authorized individuals can use the system.",
-      rationale: "21 CFR 11.10(d) requires limiting system access to authorized individuals."
+      rationale: "21 CFR 11.10(d) requires limiting system access to authorized individuals.",
+      required_capabilities: ["ACCESS_CONTROL_RESTRICTED"]
     }
   ),
   ob(
@@ -355,7 +368,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the computerized system has been validated per documented procedures.",
       acceptance_criteria: "Validation evidence demonstrates accuracy reliability and consistent intended performance.",
-      rationale: "21 CFR 11.10(a) requires validation of systems used for electronic records."
+      rationale: "21 CFR 11.10(a) requires validation of systems used for electronic records.",
+      required_capabilities: ["SOFTWARE_CONTROLLED"]
     }
   ),
   ob(
@@ -378,7 +392,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the computerized system has been validated per documented procedures.",
       acceptance_criteria: "Validation evidence demonstrates accuracy reliability and consistent intended performance.",
-      rationale: "21 CFR 11.10(a) requires validation of systems used for electronic records."
+      rationale: "21 CFR 11.10(a) requires validation of systems used for electronic records.",
+      required_capabilities: ["SOFTWARE_CONTROLLED"]
     }
   ),
   ob(
@@ -403,7 +418,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the computerized system has been validated per documented procedures.",
       acceptance_criteria: "Validation evidence demonstrates accuracy reliability and consistent intended performance.",
-      rationale: "21 CFR 11.10(a) requires validation of systems used for electronic records."
+      rationale: "21 CFR 11.10(a) requires validation of systems used for electronic records.",
+      required_capabilities: ["SOFTWARE_CONTROLLED"]
     }
   ),
   ob(
@@ -426,7 +442,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the computerized system has been validated per documented procedures.",
       acceptance_criteria: "Validation evidence demonstrates accuracy reliability and consistent intended performance.",
-      rationale: "21 CFR 11.10(a) requires validation of systems used for electronic records."
+      rationale: "21 CFR 11.10(a) requires validation of systems used for electronic records.",
+      required_capabilities: ["SOFTWARE_CONTROLLED"]
     }
   ),
   ob(
@@ -448,7 +465,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the computerized system has been validated per documented procedures.",
       acceptance_criteria: "Validation evidence demonstrates accuracy reliability and consistent intended performance.",
-      rationale: "21 CFR 11.10(a) requires validation of systems used for electronic records."
+      rationale: "21 CFR 11.10(a) requires validation of systems used for electronic records.",
+      required_capabilities: ["SOFTWARE_CONTROLLED"]
     }
   ),
   ob(
@@ -470,7 +488,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that the computerized system has been validated per documented procedures.",
       acceptance_criteria: "Validation evidence demonstrates accuracy reliability and consistent intended performance.",
-      rationale: "21 CFR 11.10(a) requires validation of systems used for electronic records."
+      rationale: "21 CFR 11.10(a) requires validation of systems used for electronic records.",
+      required_capabilities: ["SOFTWARE_CONTROLLED"]
     }
   ),
   ob(
@@ -2587,7 +2606,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that cycle recipes setpoints alarms and interlocks are documented and controlled.",
       acceptance_criteria: "Configuration baseline and alarm interlock matrix are documented.",
-      rationale: "Prevents unplanned changes to cycle parameters."
+      rationale: "Prevents unplanned changes to cycle parameters.",
+      required_capabilities: ["SOFTWARE_CONTROLLED"]
     }
   ),
   ob(
@@ -2818,7 +2838,8 @@ export const generatedObligations: Obligation[] = [
     {
       verification_expectation: "Verify that parametric release criteria and review steps are documented where applicable.",
       acceptance_criteria: "Parametric release record template and exception workflow are documented.",
-      rationale: "Supports parametric release where used."
+      rationale: "Supports parametric release where used.",
+      required_capabilities: ["HAS_DATA_LOGGER"]
     }
   ),
   ob(

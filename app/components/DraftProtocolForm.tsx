@@ -1,10 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {
-  USE_CASE_OPTIONS,
-  CAPABILITY_OPTIONS,
-} from "../../src/api/useCaseAndCapabilityOptions";
 import type { CohortForUI } from "../../src/api/getEquipmentCatalogForUI";
 import { DraftPreviewView } from "./DraftPreviewView";
 
@@ -29,6 +25,8 @@ export default function DraftProtocolForm() {
   const [intendedUse, setIntendedUse] = useState("");
   const [capabilities, setCapabilities] = useState<string[]>([]);
   const [draft, setDraft] = useState<DraftPreview | null>(null);
+  const [useCaseOptions, setUseCaseOptions] = useState<Array<{ id: string; label: string }>>([]);
+  const [capabilityOptions, setCapabilityOptions] = useState<Array<{ id: string; label: string }>>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -52,6 +50,28 @@ export default function DraftProtocolForm() {
       setEquipmentId("");
     }
   }, [cohortId, equipmentOptions, equipmentId]);
+
+  useEffect(() => {
+    if (!cohortId || !equipmentId) {
+      setUseCaseOptions([]);
+      setCapabilityOptions([]);
+      setIntendedUse("");
+      setCapabilities([]);
+      return;
+    }
+    fetch(`/api/equipment-options?cohort=${encodeURIComponent(cohortId)}&equipment=${encodeURIComponent(equipmentId)}`)
+      .then((r) => r.json())
+      .then((data) => {
+        setUseCaseOptions(data.use_case_options ?? []);
+        setCapabilityOptions(data.capability_options ?? []);
+        setIntendedUse("");
+        setCapabilities([]);
+      })
+      .catch(() => {
+        setUseCaseOptions([]);
+        setCapabilityOptions([]);
+      });
+  }, [cohortId, equipmentId]);
 
   const requestPayload = () => ({
     equipment_context: {
@@ -182,9 +202,12 @@ export default function DraftProtocolForm() {
           onChange={(e) => setIntendedUse(e.target.value)}
           className="rounded border border-zinc-300 bg-white px-3 py-2 text-foreground dark:border-zinc-600 dark:bg-zinc-900"
           required
+          disabled={useCaseOptions.length === 0}
         >
-          <option value="">Select use case…</option>
-          {USE_CASE_OPTIONS.map((u) => (
+          <option value="">
+            {useCaseOptions.length === 0 ? "Select equipment first" : "Select use case…"}
+          </option>
+          {useCaseOptions.map((u) => (
             <option key={u.id} value={u.id}>
               {u.label}
             </option>
@@ -197,7 +220,7 @@ export default function DraftProtocolForm() {
           Capabilities (select at least one) <span className="text-red-600">*</span>
         </span>
         <div className="flex flex-wrap gap-3">
-          {CAPABILITY_OPTIONS.map((c) => (
+          {capabilityOptions.map((c) => (
             <label
               key={c.id}
               className="flex items-center gap-2 cursor-pointer text-sm text-foreground"

@@ -61,6 +61,14 @@ function generateObCall(row) {
   if (row.acceptance_criteria)
     extra.push(`acceptance_criteria: ${escape(row.acceptance_criteria)}`);
   if (row.rationale) extra.push(`rationale: ${escape(row.rationale)}`);
+  if (row.required_capabilities) {
+    const caps = (row.required_capabilities || "")
+      .split(";")
+      .map((c) => c.trim())
+      .filter(Boolean);
+    if (caps.length > 0)
+      extra.push(`required_capabilities: ${JSON.stringify(caps)}`);
+  }
   const extraStr =
     extra.length > 0
       ? `,\n    {\n      ${extra.join(",\n      ")}\n    }`

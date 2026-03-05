@@ -42,7 +42,31 @@ export async function handleDraftRequest(rawInput: unknown) {
     resolver_version: "v1.0"
   };
 
-  const envelope = runResolver(executionInput, activeCatalog.obligations);
+  let envelope = runResolver(executionInput, activeCatalog.obligations);
+
+  const intendedUse = request.equipment_context?.intended_use;
+  const declaredCapabilities =
+    (request.equipment_context?.declared_capabilities as string[] | undefined) ??
+    [];
+
+  if (intendedUse && intendedUse !== "HUMAN_TISSUE_STORAGE") {
+    envelope = {
+      ...envelope,
+      obligations: envelope.obligations.filter(
+        (o) => !o.obligation_id.startsWith("OBL_TISSUE_")
+      ),
+    };
+  }
+
+  envelope = {
+    ...envelope,
+    obligations: envelope.obligations.filter((o) => {
+      const req = o.required_capabilities;
+      if (!req || req.length === 0) return true;
+      return req.every((c) => declaredCapabilities.includes(c));
+    }),
+  };
+
   const draftResponse = transformToDraftResponse(envelope, activeCatalog.version);
 
   return validateDraftResponse(draftResponse);

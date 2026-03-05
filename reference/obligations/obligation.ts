@@ -36,4 +36,12 @@ export interface Obligation {
   rationale?: string;
   verification_expectation?: string;
   acceptance_criteria?: string;
+
+  /**
+   * Optional. When present, obligation is included only if all listed
+   * capabilities are in the user's declared_capabilities (e.g. HAS_ALARM,
+   * HAS_DATA_LOGGER). Standards mandate obligations based on equipment
+   * capabilities.
+   */
+  required_capabilities?: string[];
 }

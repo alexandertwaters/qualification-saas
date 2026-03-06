@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { SubscribeButtons } from "./SubscribeButtons";
+import { ManageSubscriptionButton } from "./ManageSubscriptionButton";
 
 export default async function BillingPage() {
   const supabase = await createClient();
@@ -31,12 +32,17 @@ export default async function BillingPage() {
 
         {sub?.status === "active" ? (
           <div className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 mb-8">
-            <p className="font-medium text-zinc-900 dark:text-zinc-50">
-              Current plan: {sub.plan}
-            </p>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-              Manage your subscription in the Stripe customer portal (coming soon).
-            </p>
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <p className="font-medium text-zinc-900 dark:text-zinc-50 capitalize">
+                  Current plan: {sub.plan}
+                </p>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+                  Update payment method, view invoices, or cancel.
+                </p>
+              </div>
+              <ManageSubscriptionButton />
+            </div>
           </div>
         ) : (
           <SubscribeButtons />

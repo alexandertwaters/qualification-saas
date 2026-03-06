@@ -17,6 +17,8 @@ export interface DraftResponse {
     obligation_domain: string;
     lifecycle_state: string;
     obligation_text: string;
+    rationale?: string;
+    acceptance_criteria?: string;
     standards_references?: Array<{
       standard_id: string;
       clause_reference: string;
@@ -78,6 +80,8 @@ function obligationToResolved(
   if (standardsReferences && standardsReferences.length > 0) {
     result.standards_references = standardsReferences;
   }
+  if (obligation.rationale) result.rationale = obligation.rationale;
+  if (obligation.acceptance_criteria) result.acceptance_criteria = obligation.acceptance_criteria;
 
   return result;
 }

@@ -53,13 +53,9 @@ export async function POST(request: NextRequest) {
 
   if (event.type === "customer.subscription.updated" || event.type === "customer.subscription.deleted") {
     const sub = event.data.object as Stripe.Subscription;
-    const userId = sub.metadata?.user_id;
-
-    if (!userId) return NextResponse.json({ received: true });
-
     const status = sub.status === "active" ? "active" : sub.status === "canceled" ? "canceled" : "past_due";
-
     const periodEnd = (sub as { current_period_end?: number }).current_period_end;
+
     await supabase
       .from("subscriptions")
       .update({

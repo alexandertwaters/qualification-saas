@@ -6,7 +6,7 @@ export function AllowanceDisplay() {
   const [allowance, setAllowance] = useState<{ used: number; limit: number } | null>(null);
 
   useEffect(() => {
-    fetch("/api/allowance")
+    fetch("/api/allowance", { credentials: "include" })
       .then((r) => r.json())
       .then((data) => {
         if (data.used !== undefined && data.limit !== undefined) {

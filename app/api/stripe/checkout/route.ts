@@ -46,6 +46,9 @@ export async function POST(request: NextRequest) {
         user_id: user.id,
         plan,
       },
+      subscription_data: {
+        metadata: { user_id: user.id, plan },
+      },
     });
 
     return NextResponse.json({ url: session.url });

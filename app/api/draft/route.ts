@@ -1,12 +1,32 @@
 import { NextRequest, NextResponse } from "next/server";
 import { handleDraftRequest } from "../../../src/resolver/handleDraftRequest";
 import { generateDraftDocx } from "../../../src/draft/generateDraftDocx";
+import { createClient } from "@/lib/supabase/server";
+import { createProjectAndProtocol } from "@/lib/supabase/db";
 import type { DraftResponse } from "../../../src/resolver/transformToDraftResponse";
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const draft = (await handleDraftRequest(body)) as DraftResponse;
+    const supabase = await createClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    let protocolId: string | undefined;
+    if (user && body.equipment_context) {
+      try {
+        const { protocolId: id } = await createProjectAndProtocol(
+          user.id,
+          body.equipment_context,
+          draft as unknown as Record<string, unknown>
+        );
+        protocolId = id;
+      } catch {
+        // Proceed without saving if DB fails (e.g. migration not run)
+      }
+    }
 
     const format = request.nextUrl.searchParams.get("format");
     const accept = request.headers.get("accept") ?? "";
@@ -36,7 +56,10 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    return NextResponse.json(draft, { status: 200 });
+    return NextResponse.json(
+      protocolId ? { ...draft, protocol_id: protocolId } : draft,
+      { status: 200 }
+    );
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
     return NextResponse.json({ error: message }, { status: 400 });

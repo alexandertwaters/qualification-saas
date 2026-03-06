@@ -50,11 +50,11 @@ The following are **excluded** from MVP scope:
 | Next.js + TypeScript | ✓ |
 | React, TailwindCSS | ✓ |
 | shadcn/ui | Not used |
-| Supabase (Postgres, Auth, Storage) | Not integrated |
+| Supabase (Postgres, Auth, Storage) | Auth integrated (signup, login, session) |
 | Vercel | ✓ Connected ([validation-saas](https://vercel.com/alexandertwaters-projects/validation-saas)) |
-| Stripe Billing | Not integrated |
+| Stripe Billing | Checkout + webhook integrated |
 | Resend/Mailgun | Not integrated |
-| Cookie/Policy (Iubenda/Cookiebot) | Not integrated |
+| Cookie/Policy | Basic cookie banner + Privacy/T&C pages |
 
 ### Database tables
 
@@ -71,28 +71,30 @@ The following are **excluded** from MVP scope:
 | `POST /api/stripe/webhook` | Not implemented |
 | `POST /api/email/send` | Not implemented |
 | — | `GET /api/equipment-catalog` ✓ |
+| — | `GET /api/equipment-options` ✓ |
 
 ### UI pages
 
 | Planned | Current |
 |---------|---------|
 | `/` landing | ✓ (protocol form, not marketing) |
-| `/signup`, `/login` | Not implemented |
-| `/dashboard` | Not implemented |
+| `/signup`, `/login` | ✓ Implemented |
+| `/dashboard` | ✓ Shell (My drafts placeholder) |
 | `/projects/new` | Partial (form on `/`) |
 | `/protocol/:id` | Partial (preview in-form, no persisted protocol) |
-| `/billing` | Not implemented |
+| `/billing` | ✓ Implemented |
 
 ---
 
 ## 2. What’s completed
 
-- **Obligation catalog and resolver** — Standards-based obligations, equipment applicability, domain/phase derivation
-- **Equipment selection UI** — Cohort and equipment type, use case, capabilities
-- **Protocol draft generation** — Obligations resolved from equipment and parameters
+- **Obligation catalog and resolver** — Standards-based obligations, equipment applicability, domain/phase derivation, capability-based filtering
+- **Equipment selection UI** — Cohort and equipment type, dynamic use case and capabilities (per cohort/equipment via ontology)
+- **Standards display** — Applicable standards shown beside each obligation (no "—")
+- **Protocol draft generation** — Obligations resolved from equipment, use case, and capabilities
 - **In-site draft view** — Human-readable HTML preview in a view panel
 - **Word (.docx) download** — Downloadable protocol draft
-- **Equipment catalog API** — `/api/equipment-catalog` for UI
+- **Equipment catalog API** — `/api/equipment-catalog`, `/api/equipment-options` (dynamic use case/capabilities per equipment)
 - **Draft API** — `POST /api/draft` (JSON or Word)
 - **Advisory positioning** — Notice that users bear responsibility
 
@@ -106,7 +108,7 @@ The following are **excluded** from MVP scope:
 2. **Subscription allowance display** — Users should see their plan’s draft protocol allowance (e.g. “8 of 10 drafts used this month”) so they know how many drafts remain.
 3. **Supabase setup** — Project, DB, Auth
 4. **Auth flow** — Signup, login, session, protected routes
-5. **Stripe** — Subscription, webhooks, invoices, pricing tiers (see section 10)
+5. **Stripe** — Subscription, webhooks, invoices, pricing tiers (see section 9)
 6. **Draft storage** — Persist generated draft protocol templates in Postgres for revisitation
 
 ### Medium priority
@@ -121,12 +123,37 @@ The following are **excluded** from MVP scope:
 11. **PDF export** — Optional PDF in addition to Word
 12. **QA** — E2E and regression tests
 
+### Protocol generation (future improvement)
+
+- **Natural workflow order** — IQ/OQ/PQ obligations rendered in natural human workflow order
+- **Segmented sections** — Obligations woven into segmented, natural language IQ/OQ/PQ sections
+- **Summarization tables** — Phase-level tables of obligations and standards reflecting natural workflow
+- **Example Protocol Drafts alignment** — Document structure and language adapted from `docs/Example Protocol Drafts`
+
+### Security requirements
+
+- **No bot signups** — Bot prevention (CAPTCHA, rate limits, etc.)
+- **No false invoices** — Only real orders generate invoices
+- **No draft without payment** — Draft preview and generation gated behind subscription
+- **Real users only** — Password reset, email on orders, user receives invoice
+- **Help pathway** — Automated help request submission for payment or draft issues
+
+### Product and discoverability
+
+- **Product name and domain** — Determine optimal product name and custom domain
+- **SEO / GEO / AEO** — Optimize for organic traffic, generative engine optimization, and answer engine optimization; improve SRP ranking for subject-matter experts searching for this type of tool
+
+### Obligation catalog identifiers
+
+- **Production Obligation Catalog v1.0** — Comprehensive catalog used for draft generation. Selected via `CATALOG_VERSION=production` or `production-v1.0`. Draft preview generates only when this catalog is active.
+- **Fallback Obligation Catalog** — Minimal catalog for testing; draft generation is disabled when active (`CATALOG_VERSION=fallback`).
+
 ---
 
 ## 4. GitHub and Vercel (current setup)
 
 - **Repository:** [alexandertwaters/qualification_saas](https://github.com/alexandertwaters/qualification_saas)
-- **Active branch:** `chore/resolver-contract-v1-clarify-versioning-nongoals`
+- **Active branch:** `main`
 - **Vercel deployment:** [validation-saas](https://vercel.com/alexandertwaters-projects/validation-saas)
 - **Vercel source:** `main` branch of GitHub repo
 - **Git:** Initialized and remote configured
@@ -162,7 +189,7 @@ git push origin main   # or merge your branch into main first
 
 ### 5.3 Create tables (minimal) **done**
 
-Run in SQL editor:
+Run migrations in SQL editor. First, the base tables:
 
 ```sql
 -- Projects (validation jobs) **done**
@@ -207,6 +234,8 @@ CREATE POLICY "Users can manage protocols for own projects"
   );
 ```
 
+Then run `supabase/migrations/001_add_draft_response.sql` and `002_add_subscriptions.sql` to add `draft_response` on protocols and the `subscriptions` table for Stripe.
+
 ### 5.4 API keys
 
 1. Settings → API
@@ -227,9 +256,13 @@ In Project → Settings → Environment Variables add:
 
 | Name | Value | Notes |
 |------|-------|-------|
-| `CATALOG_VERSION` | `stub` | Catalog version | **What do i input here, 'stub' or stub, is that the correct environment variable for the active catalog?**
-| `NEXT_PUBLIC_SUPABASE_URL` | From Supabase | Project URL | **done**
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | From Supabase | Anon key | **done**
+| `CATALOG_VERSION` | `production` | Use `production` or `production-v1.0` for full catalog (required for draft generation). `fallback` = minimal catalog only (draft generation disabled). Default: `production`. |
+| `NEXT_PUBLIC_SUPABASE_URL` | From Supabase | Project URL | **done** |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | From Supabase | Anon key | **done** |
+| `SUPABASE_SERVICE_ROLE_KEY` | From Supabase | Service role | For Stripe webhook |
+| `STRIPE_SECRET_KEY` | From Stripe | Secret key | For checkout |
+| `STRIPE_WEBHOOK_SECRET` | From Stripe | Webhook signing secret | For webhook verification |
+| `STRIPE_PRICE_STARTER_ANNUAL` etc. | From Stripe | Price IDs | Create products in Stripe Dashboard |
 
 ### 6.3 Build settings **done**
 
@@ -241,7 +274,7 @@ In Project → Settings → Environment Variables add:
 
 1. Save env vars
 2. Redeploy (or push to `main` for automatic deploys)
-3. Open the deployed URL and test protocol generation **protocol generation is lacking. while a general template to incorporate the obligations and standards into has not yet been provided, the frame that is present is lacking. for every obligation, i need the applicable standard(s) referenced beside that obligation, not a "-". Furthermore, After equipment selection and equipment type selection, the "selection paramters", i.e., use case and capabilities, seem to be static and do not reflect actual applicable use cases or capabilities for the selected equipment and cohort type. The use case and capabilities need to reflect actual actual use cases and capabilities for the selected cohort and equipment type. Additionally, applicable standards and subsequent obligations that are applicable to the generated draft protocol rely on accurate use case and capabilities for selected cohort and equipment type as different use cases and capabilities alter scope of standards applicability and subsequent obligation inclusion/exclusion. Also, i have created a Stripe account and a Resend account**
+3. Open the deployed URL and test protocol generation. **Resolved:** Standards now display beside each obligation; use case and capabilities are dynamic per cohort/equipment; obligations filtered by use case and capabilities. Stripe and Resend accounts created. **Still needed:** Natural workflow order, segmented IQ/OQ/PQ sections, summarization tables (see section 3).
 
 ### 6.5 Custom domain (optional)
 
@@ -251,21 +284,23 @@ Project → Settings → Domains → Add (e.g. `app.yourdomain.com`)
 
 ## 7. Immediate sequence
 
-1. Merge `chore/resolver-contract-v1-clarify-versioning-nongoals` into `main` (or push to `main`) and confirm Vercel deploys  **done**
+1. Merge to `main` and confirm Vercel deploys **done**
 2. Create Supabase project and run SQL for `projects` and `protocols` **done** 
 3. Add Supabase env vars in Vercel  
-4. Implement Supabase Auth (signup, login) and protected routes  
-5. Implement draft storage and revisitation (My drafts / dashboard with list of generated drafts)  
-6. Implement subscription allowance display (X of Y drafts used)  
-7. Implement Stripe products for Starter/Growth/Scale and webhook  
-8. Add demo video for visitors on landing page  
-9. Add compliance (privacy, T&C, cookie banner)
+4. Implement Supabase Auth (signup, login) and protected routes **done**  
+5. Implement draft storage and revisitation (My drafts / dashboard with list of generated drafts) **done**  
+6. Implement subscription allowance display (X of Y drafts used) **done**  
+7. Implement Stripe products for Starter/Growth/Scale and webhook **done**  
+8. Add demo video for visitors on landing page (defer until site appearance finalized)  
+9. Add compliance (privacy, T&C, cookie banner) **done**
 
 ---
 
 ## 8. Legal notice
 
 > This tool provides guidance and templates; users must maintain legally obtained standards and bear responsibility for compliance. — Agrocado LLC
+
+**Needs hardening:** Pure advisory/informational notice, no guarantees of compliance or accuracy. Value = startup time savings and scope refinement. Notice that standards are not stored and content is not taken from standards (copyright protected). Frame obligations as interpretations by a former med device validation engineer.
 
 ---
 

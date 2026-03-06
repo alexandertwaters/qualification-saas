@@ -3,11 +3,18 @@ import { CatalogIntegrityError } from "../errors/CatalogIntegrityError";
 import type { Obligation } from "../../../reference/obligations/obligation";
 import type { EquipmentOntology } from "./loadEquipmentOntology";
 
+export interface CatalogConfig {
+  version: string;
+  displayId: string;
+  productionReady: boolean;
+}
+
 export function normalizeCatalog(
-  version: string,
+  config: CatalogConfig,
   rawCatalog: Obligation[],
   equipmentOntology?: EquipmentOntology
 ): ActiveCatalog {
+  const { version, displayId, productionReady } = config;
   const exists = {
     equipmentTypes: new Set<string>(),
     equipmentCohorts: new Set<string>(),
@@ -107,6 +114,8 @@ export function normalizeCatalog(
 
   return {
     version,
+    displayId,
+    productionReady,
     exists,
     deprecated,
     obligations: rawCatalog,

@@ -19,7 +19,10 @@ export default function Home() {
 
         <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
           Advisory only. User bears responsibility for compliance. Drafts are
-          intended for refinement before submission to your QMS.
+          intended for refinement before submission to your QMS.{" "}
+          <a href="/privacy" className="hover:underline">Privacy</a>
+          {" · "}
+          <a href="/terms" className="hover:underline">Terms</a>
         </footer>
       </main>
     </div>

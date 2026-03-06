@@ -16,6 +16,7 @@ type DraftPreview = {
   draft_metadata: { generated_at: string };
   version_anchors: { catalog_version: string };
   resolved_obligations: ResolvedObligation[];
+  protocol_id?: string;
 };
 
 export default function DraftProtocolForm() {
@@ -258,7 +259,7 @@ export default function DraftProtocolForm() {
             <div className="max-h-[60vh] overflow-y-auto p-6">
               <DraftPreviewView draft={draft} equipmentName={selectedCohort?.equipment.find(e => e.id === equipmentId)?.name ?? equipmentId} cohortName={selectedCohort?.name ?? cohortId} />
             </div>
-            <div className="border-t border-zinc-200 dark:border-zinc-700 px-6 py-4 flex gap-3">
+            <div className="border-t border-zinc-200 dark:border-zinc-700 px-6 py-4 flex flex-wrap items-center gap-3">
               <button
                 type="button"
                 onClick={handleDownloadWord}
@@ -267,6 +268,14 @@ export default function DraftProtocolForm() {
               >
                 Download .docx
               </button>
+              {draft.protocol_id && (
+                <a
+                  href={`/protocol/${draft.protocol_id}`}
+                  className="text-sm text-zinc-600 dark:text-zinc-400 hover:underline"
+                >
+                  Saved to My drafts →
+                </a>
+              )}
             </div>
           </div>
         </section>

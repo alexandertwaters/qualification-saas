@@ -27,8 +27,11 @@ qualification_saas/
 
 ```bash
 npm install
-CATALOG_VERSION=stub npm run dev
+cp .env.example .env.local   # Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY
+npm run dev
 ```
+
+**Environment:** Copy `.env.example` to `.env.local` and set Supabase URL and anon key for auth. For production draft generation, `CATALOG_VERSION` defaults to `production`; use `fallback` for minimal catalog (no draft generation).
 
 Open [http://localhost:3000](http://localhost:3000).
 

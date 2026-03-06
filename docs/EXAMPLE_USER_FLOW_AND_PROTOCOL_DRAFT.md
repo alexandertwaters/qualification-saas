@@ -89,7 +89,7 @@ Based on the current `transformToDraftResponse` output schema and obligations fo
   },
   "version_anchors": {
     "resolver_contract_version": "v1.0",
-    "catalog_version": "stub",
+    "catalog_version": "Production Obligation Catalog v1.0",
     "obligation_schema_version": "v1.0"
   },
   "resolved_obligations": [

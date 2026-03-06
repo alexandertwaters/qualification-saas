@@ -28,6 +28,13 @@ export async function handleDraftRequest(rawInput: unknown) {
     equipmentCohort
   );
 
+  if (!activeCatalog.productionReady) {
+    throw new Error(
+      "Draft generation requires a production-ready obligation catalog. " +
+        "Set CATALOG_VERSION=production or production-v1.0 to use the comprehensive catalog."
+    );
+  }
+
   validateCatalogExistence(
     { ...request, draft_scope: derivedScope },
     activeCatalog
@@ -67,7 +74,10 @@ export async function handleDraftRequest(rawInput: unknown) {
     }),
   };
 
-  const draftResponse = transformToDraftResponse(envelope, activeCatalog.version);
+  const draftResponse = transformToDraftResponse(
+    envelope,
+    activeCatalog.displayId
+  );
 
   return validateDraftResponse(draftResponse);
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export function ManageSubscriptionButton() {
   const [loading, setLoading] = useState(false);
@@ -26,12 +27,8 @@ export function ManageSubscriptionButton() {
   }
 
   return (
-    <button
-      onClick={handleClick}
-      disabled={loading}
-      className="rounded-lg bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 px-4 py-2 text-sm font-medium hover:opacity-90 disabled:opacity-50"
-    >
+    <Button onClick={handleClick} disabled={loading} size="sm">
       {loading ? "Opening…" : "Manage subscription"}
-    </button>
+    </Button>
   );
 }

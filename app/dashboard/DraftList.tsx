@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 type ProtocolSummary = {
   id: string;
@@ -30,57 +32,59 @@ export function DraftList() {
 
   if (loading) {
     return (
-      <div className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 text-center text-zinc-500">
-        Loading drafts…
-      </div>
+      <Card className="mb-6">
+        <CardContent className="py-12 text-center text-muted-foreground">
+          Loading drafts…
+        </CardContent>
+      </Card>
     );
   }
 
   if (error) {
     return (
-      <div className="rounded-lg border border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-950/30 p-4 text-red-700 dark:text-red-400">
-        {error}
-      </div>
+      <Card className="mb-6 border-destructive/50 bg-destructive/10">
+        <CardContent className="py-4 text-destructive">
+          {error}
+        </CardContent>
+      </Card>
     );
   }
 
   if (protocols.length === 0) {
     return (
-      <div className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-8 text-center text-zinc-500 dark:text-zinc-400">
-        <p className="mb-4">No drafts yet.</p>
-        <p className="text-sm">Generate a draft from the home page to see it here.</p>
-      </div>
+      <Card className="mb-6">
+        <CardContent className="py-12 text-center">
+          <p className="mb-4 text-muted-foreground">No drafts yet.</p>
+          <p className="text-sm text-muted-foreground">Generate a draft from the home page to see it here.</p>
+        </CardContent>
+      </Card>
     );
   }
 
   return (
-    <ul className="space-y-2">
+    <ul className="space-y-2 mb-6">
       {protocols.map((p) => (
-        <li
-          key={p.id}
-          className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 flex items-center justify-between gap-4"
-        >
-          <div className="min-w-0">
-            <Link
-              href={`/protocol/${p.id}`}
-              className="font-medium text-zinc-900 dark:text-zinc-100 hover:underline truncate block"
-            >
-              {p.equipmentType} · {p.equipmentCohort}
+        <Card key={p.id}>
+          <CardContent className="py-4 flex items-center justify-between gap-4">
+            <div className="min-w-0">
+              <Link
+                href={`/protocol/${p.id}`}
+                className="font-medium text-foreground hover:underline truncate block"
+              >
+                {p.equipmentType} · {p.equipmentCohort}
+              </Link>
+              <p className="text-sm text-muted-foreground mt-0.5">
+                {new Date(p.createdAt).toLocaleDateString(undefined, {
+                  dateStyle: "medium",
+                })}
+                {p.intendedUse ? ` · ${p.intendedUse}` : ""}
+              </p>
+            </div>
+            <Link href={`/protocol/${p.id}`} className={buttonVariants({ variant: "secondary", size: "sm" })}>
+              View
             </Link>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">
-              {new Date(p.createdAt).toLocaleDateString(undefined, {
-                dateStyle: "medium",
-              })}
-              {p.intendedUse ? ` · ${p.intendedUse}` : ""}
-            </p>
-          </div>
-          <Link
-            href={`/protocol/${p.id}`}
-            className="shrink-0 rounded bg-zinc-200 dark:bg-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-900 dark:text-zinc-100 hover:bg-zinc-300 dark:hover:bg-zinc-600"
-          >
-            View
-          </Link>
-        </li>
+          </CardContent>
+        </Card>
       ))}
     </ul>
   );

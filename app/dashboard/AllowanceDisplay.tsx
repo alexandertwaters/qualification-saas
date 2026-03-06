@@ -19,7 +19,7 @@ export function AllowanceDisplay() {
   if (!allowance) return null;
 
   return (
-    <p className="mb-6 text-sm text-zinc-600 dark:text-zinc-400">
+    <p className="mb-6 text-sm text-muted-foreground">
       Drafts this month: {allowance.used} of {allowance.limit} used
     </p>
   );

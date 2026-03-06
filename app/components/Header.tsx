@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import type { User } from "@supabase/supabase-js";
 import Link from "next/link";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function Header() {
   const [user, setUser] = useState<User | null>(null);
@@ -30,50 +32,35 @@ export function Header() {
   }
 
   return (
-    <header className="border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+    <header className="border-b border-border bg-background">
       <div className="mx-auto max-w-2xl px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+        <Link href="/" className="text-lg font-semibold text-foreground">
           Qualification Protocol Draft
         </Link>
-        <nav className="flex items-center gap-4">
+        <nav className="flex items-center gap-3">
           {loading ? (
-            <span className="text-sm text-zinc-500">…</span>
+            <span className="text-sm text-muted-foreground">…</span>
           ) : user ? (
             <>
-              <Link
-                href="/dashboard"
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
-              >
+              <Link href="/dashboard" className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}>
                 My drafts
               </Link>
-              <Link
-                href="/billing"
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
-              >
+              <Link href="/billing" className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}>
                 Billing
               </Link>
-              <span className="text-sm text-zinc-500 dark:text-zinc-400">
+              <span className="text-sm text-muted-foreground px-2">
                 {user.email}
               </span>
-              <button
-                onClick={handleSignOut}
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
-              >
+              <Button variant="ghost" size="sm" onClick={handleSignOut}>
                 Log out
-              </button>
+              </Button>
             </>
           ) : (
             <>
-              <Link
-                href="/login"
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
-              >
+              <Link href="/login" className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}>
                 Log in
               </Link>
-              <Link
-                href="/signup"
-                className="rounded-lg bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 px-3 py-1.5 text-sm font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200"
-              >
+              <Link href="/signup" className={cn(buttonVariants({ size: "sm" }))}>
                 Sign up
               </Link>
             </>

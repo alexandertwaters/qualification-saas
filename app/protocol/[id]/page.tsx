@@ -3,6 +3,7 @@ import { redirect, notFound } from "next/navigation";
 import { getProtocolById } from "@/lib/supabase/db";
 import { DraftPreviewView } from "@/app/components/DraftPreviewView";
 import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 
 export default async function ProtocolPage({
   params,
@@ -37,19 +38,16 @@ export default async function ProtocolPage({
   };
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
+    <div className="min-h-screen bg-muted/30">
       <main className="mx-auto max-w-2xl px-6 py-12">
         <div className="mb-6 flex items-center justify-between gap-4">
           <Link
             href="/dashboard"
-            className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100"
+            className="text-sm text-muted-foreground hover:text-foreground"
           >
             ← My drafts
           </Link>
-          <a
-            href={`/api/protocol/${id}/download`}
-            className="rounded-lg bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 px-4 py-2 text-sm font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200"
-          >
+          <a href={`/api/protocol/${id}/download`} className={buttonVariants({ size: "sm" })}>
             Download Word
           </a>
         </div>

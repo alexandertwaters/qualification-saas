@@ -56,13 +56,13 @@ export function DraftPreviewView({
         <p className="text-base font-medium m-0 mt-2 text-center">
           {equipmentName} | {cohortName}
         </p>
-        <p className="text-xs text-zinc-500 dark:text-zinc-400 m-0 mt-2 text-center">
+        <p className="text-xs text-muted-foreground m-0 mt-2 text-center">
           Protocol ID: [Enter protocol ID] · Revision: [Rev] · Effective date: [Date]
         </p>
-        <p className="text-xs text-zinc-500 dark:text-zinc-400 m-0 mt-1 text-center">
+        <p className="text-xs text-muted-foreground m-0 mt-1 text-center">
           Generated {new Date(draft.draft_metadata.generated_at).toLocaleString()} · Catalog: {draft.version_anchors.catalog_version}
         </p>
-        <p className="text-xs italic text-zinc-500 dark:text-zinc-400 mt-3 text-center">
+        <p className="text-xs italic text-muted-foreground mt-3 text-center">
           This draft is advisory. Replace all [placeholders] with your specific information. Refine and edit before QMS submission. User bears responsibility for compliance.
         </p>
       </header>
@@ -78,17 +78,17 @@ export function DraftPreviewView({
         <h2 className="text-base font-semibold mt-0 mb-2">2. Equipment Identification</h2>
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="border-b border-zinc-200 dark:border-zinc-600">
+            <tr className="border-b border-border">
               <th className="text-left py-2 pr-4 font-medium">Attribute</th>
               <th className="text-left py-2 font-medium">Value (replace with your information)</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-zinc-100 dark:border-zinc-800"><td className="py-2 pr-4">Manufacturer</td><td className="py-2">{PLACEHOLDER}</td></tr>
-            <tr className="border-b border-zinc-100 dark:border-zinc-800"><td className="py-2 pr-4">Model</td><td className="py-2">{PLACEHOLDER}</td></tr>
-            <tr className="border-b border-zinc-100 dark:border-zinc-800"><td className="py-2 pr-4">Serial number</td><td className="py-2">{PLACEHOLDER}</td></tr>
-            <tr className="border-b border-zinc-100 dark:border-zinc-800"><td className="py-2 pr-4">Asset tag</td><td className="py-2">{PLACEHOLDER}</td></tr>
-            <tr className="border-b border-zinc-100 dark:border-zinc-800"><td className="py-2 pr-4">Location (room/area)</td><td className="py-2">{PLACEHOLDER}</td></tr>
+            <tr className="border-b border-border/60"><td className="py-2 pr-4">Manufacturer</td><td className="py-2">{PLACEHOLDER}</td></tr>
+            <tr className="border-b border-border/60"><td className="py-2 pr-4">Model</td><td className="py-2">{PLACEHOLDER}</td></tr>
+            <tr className="border-b border-border/60"><td className="py-2 pr-4">Serial number</td><td className="py-2">{PLACEHOLDER}</td></tr>
+            <tr className="border-b border-border/60"><td className="py-2 pr-4">Asset tag</td><td className="py-2">{PLACEHOLDER}</td></tr>
+            <tr className="border-b border-border/60"><td className="py-2 pr-4">Location (room/area)</td><td className="py-2">{PLACEHOLDER}</td></tr>
           </tbody>
         </table>
       </section>
@@ -143,7 +143,7 @@ export function DraftPreviewView({
             <h3 className="text-sm font-medium mt-0 mb-2">{sectionNum}.1 Summary: Standards and Obligations</h3>
             <table className="w-full text-sm border-collapse mb-4">
               <thead>
-                <tr className="border-b border-zinc-200 dark:border-zinc-600">
+                <tr className="border-b border-border">
                   <th className="text-left py-2 pr-4 font-medium">Standard</th>
                   <th className="text-left py-2 pr-4 font-medium w-24">Clause</th>
                   <th className="text-left py-2 font-medium">Annotated Requirement</th>
@@ -151,9 +151,9 @@ export function DraftPreviewView({
               </thead>
               <tbody>
                 {summaryRows.map((r, i) => (
-                  <tr key={i} className="border-b border-zinc-100 dark:border-zinc-800">
-                    <td className="py-2 pr-4 text-zinc-600 dark:text-zinc-400">{r.standard}</td>
-                    <td className="py-2 pr-4 text-zinc-600 dark:text-zinc-400">{r.clause}</td>
+                  <tr key={i} className="border-b border-border/60">
+                    <td className="py-2 pr-4 text-muted-foreground">{r.standard}</td>
+                    <td className="py-2 pr-4 text-muted-foreground">{r.clause}</td>
                     <td className="py-2">{r.requirement}</td>
                   </tr>
                 ))}
@@ -163,7 +163,7 @@ export function DraftPreviewView({
             <h3 className="text-sm font-medium mt-0 mb-2">{sectionNum}.2 Detailed Requirements</h3>
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="border-b border-zinc-200 dark:border-zinc-600">
+                <tr className="border-b border-border">
                   <th className="text-left py-2 pr-4 font-medium w-8">#</th>
                   <th className="text-left py-2 pr-4 font-medium w-36">Domain</th>
                   <th className="text-left py-2 font-medium">Obligation / Verification / Acceptance Criteria</th>
@@ -172,28 +172,28 @@ export function DraftPreviewView({
               </thead>
               <tbody>
                 {obligations.map((o, i) => (
-                  <tr key={o.obligation_id} className="border-b border-zinc-100 dark:border-zinc-800">
-                    <td className="py-2 pr-4 text-zinc-500 align-top">{i + 1}</td>
-                    <td className="py-2 pr-4 text-zinc-600 dark:text-zinc-400 align-top">{formatDomain(o.obligation_domain)}</td>
+                  <tr key={o.obligation_id} className="border-b border-border/60">
+                    <td className="py-2 pr-4 text-muted-foreground align-top">{i + 1}</td>
+                    <td className="py-2 pr-4 text-muted-foreground align-top">{formatDomain(o.obligation_domain)}</td>
                     <td className="py-2 align-top">
                       <div className="space-y-1">
                         <p className="m-0">{o.obligation_text}</p>
                         {o.rationale && (
-                          <p className="m-0 text-xs text-zinc-500 dark:text-zinc-400">
+                          <p className="m-0 text-xs text-muted-foreground">
                             <span className="font-medium">Rationale:</span> {o.rationale}
                           </p>
                         )}
                         {o.acceptance_criteria && (
-                          <p className="m-0 text-xs text-zinc-500 dark:text-zinc-400">
+                          <p className="m-0 text-xs text-muted-foreground">
                             <span className="font-medium">Acceptance:</span> {o.acceptance_criteria}
                           </p>
                         )}
-                        <p className="m-0 text-xs italic text-zinc-500 dark:text-zinc-400">
+                        <p className="m-0 text-xs italic text-muted-foreground">
                           User-specific criteria: {PLACEHOLDER}
                         </p>
                       </div>
                     </td>
-                    <td className="py-2 pl-4 text-zinc-600 dark:text-zinc-400 text-xs align-top">
+                    <td className="py-2 pl-4 text-muted-foreground text-xs align-top">
                       {(o.standards_references ?? [])
                         .map((s) => formatStandardClause(s.standard_id, s.clause_reference))
                         .join("; ") || "—"}
@@ -206,7 +206,7 @@ export function DraftPreviewView({
         );
       })}
 
-      <section className="mt-8 pt-4 border-t border-zinc-200 dark:border-zinc-700">
+      <section className="mt-8 pt-4 border-t border-border">
         <h2 className="text-base font-semibold mt-0 mb-2">Approval</h2>
         <p className="text-sm m-0 mb-1">Prepared by: _________________________  Date: ___________</p>
         <p className="text-sm m-0 mb-1">Reviewed by: _________________________  Date: ___________</p>

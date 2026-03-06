@@ -6,6 +6,10 @@ import type { CohortForUI } from "../../src/api/getEquipmentCatalogForUI";
 import { DraftPreviewView } from "./DraftPreviewView";
 import { createClient } from "@/lib/supabase/client";
 import type { User } from "@supabase/supabase-js";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { cn } from "@/lib/utils";
 
 type ResolvedObligation = {
   obligation_id: string;
@@ -168,14 +172,15 @@ export default function DraftProtocolForm() {
       </h2>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="cohort" className="text-sm font-medium text-foreground">
-          Cohort
-        </label>
+        <Label htmlFor="cohort">Cohort</Label>
         <select
           id="cohort"
           value={cohortId}
           onChange={(e) => setCohortId(e.target.value)}
-          className="rounded border border-zinc-300 bg-white px-3 py-2 text-foreground dark:border-zinc-600 dark:bg-zinc-900"
+          className={cn(
+            "flex h-10 w-full rounded-lg border border-input bg-transparent px-3 py-2 text-sm",
+            "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          )}
           required
         >
           <option value="">Select cohort…</option>
@@ -188,14 +193,15 @@ export default function DraftProtocolForm() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="equipment" className="text-sm font-medium text-foreground">
-          Equipment type
-        </label>
+        <Label htmlFor="equipment">Equipment type</Label>
         <select
           id="equipment"
           value={equipmentId}
           onChange={(e) => setEquipmentId(e.target.value)}
-          className="rounded border border-zinc-300 bg-white px-3 py-2 text-foreground dark:border-zinc-600 dark:bg-zinc-900"
+          className={cn(
+            "flex h-10 w-full rounded-lg border border-input bg-transparent px-3 py-2 text-sm",
+            "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          )}
           required
         >
           <option value="">Select equipment…</option>
@@ -210,20 +216,22 @@ export default function DraftProtocolForm() {
       <h2 className="text-xl font-semibold text-foreground mt-4">
         Selection parameters
       </h2>
-      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+      <p className="text-sm text-muted-foreground">
         Use case and capabilities inform obligation inclusion. Qualification
         phases and obligation domains are determined by the engine.
       </p>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="use-case" className="text-sm font-medium text-foreground">
-          Use case <span className="text-red-600">*</span>
-        </label>
+        <Label htmlFor="use-case">Use case <span className="text-destructive">*</span></Label>
         <select
           id="use-case"
           value={intendedUse}
           onChange={(e) => setIntendedUse(e.target.value)}
-          className="rounded border border-zinc-300 bg-white px-3 py-2 text-foreground dark:border-zinc-600 dark:bg-zinc-900"
+          className={cn(
+            "flex h-10 w-full rounded-lg border border-input bg-transparent px-3 py-2 text-sm",
+            "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+            "disabled:cursor-not-allowed disabled:opacity-50"
+          )}
           required
           disabled={useCaseOptions.length === 0}
         >
@@ -239,9 +247,9 @@ export default function DraftProtocolForm() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <span className="text-sm font-medium text-foreground">
-          Capabilities (select at least one) <span className="text-red-600">*</span>
-        </span>
+        <Label>
+          Capabilities (select at least one) <span className="text-destructive">*</span>
+        </Label>
         <div className="flex flex-wrap gap-3">
           {capabilityOptions.map((c) => (
             <label
@@ -252,7 +260,7 @@ export default function DraftProtocolForm() {
                 type="checkbox"
                 checked={capabilities.includes(c.id)}
                 onChange={() => toggleCapability(c.id)}
-                className="rounded border-zinc-300"
+                className="rounded border-input"
               />
               {c.label}
             </label>
@@ -269,45 +277,49 @@ export default function DraftProtocolForm() {
       )}
 
       {error && (
-        <div className="rounded bg-red-100 px-3 py-2 text-sm text-red-800 dark:bg-red-900/30 dark:text-red-200">
+        <div className="rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-3 text-sm text-destructive">
           {error}
         </div>
       )}
 
-      <button
+      <Button
         type="submit"
         disabled={!user || loading || !cohortId || !equipmentId || !intendedUse || capabilities.length === 0}
-        className="rounded bg-foreground px-6 py-3 text-background font-medium hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {loading ? "Generating…" : "Generate draft"}
-      </button>
+      </Button>
 
       {draft && (
-        <section className="mt-8 border-t border-zinc-200 pt-8 dark:border-zinc-800">
-          <h2 className="text-xl font-semibold text-foreground mb-4">Draft preview</h2>
-          <div className="rounded-lg border border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-900 overflow-hidden">
-            <div className="max-h-[60vh] overflow-y-auto p-6">
-              <DraftPreviewView draft={draft} equipmentName={selectedCohort?.equipment.find(e => e.id === equipmentId)?.name ?? equipmentId} cohortName={selectedCohort?.name ?? cohortId} />
-            </div>
-            <div className="border-t border-zinc-200 dark:border-zinc-700 px-6 py-4 flex flex-wrap items-center gap-3">
-              <button
-                type="button"
-                onClick={handleDownloadWord}
-                disabled={loading}
-                className="rounded bg-foreground px-4 py-2 text-background text-sm font-medium hover:opacity-90 disabled:opacity-50"
-              >
-                Download .docx
-              </button>
+        <section className="mt-8 border-t border-border pt-8">
+          <Card>
+            <CardHeader>
+              <h2 className="text-xl font-semibold text-foreground">Draft preview</h2>
+            </CardHeader>
+            <CardContent className="p-0">
+              <div className="max-h-[60vh] overflow-y-auto p-6">
+                <DraftPreviewView draft={draft} equipmentName={selectedCohort?.equipment.find(e => e.id === equipmentId)?.name ?? equipmentId} cohortName={selectedCohort?.name ?? cohortId} />
+              </div>
+              <div className="border-t border-border px-6 py-4 flex flex-wrap items-center gap-3">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  size="sm"
+                  onClick={handleDownloadWord}
+                  disabled={loading}
+                >
+                  Download .docx
+                </Button>
               {draft.protocol_id && (
                 <a
                   href={`/protocol/${draft.protocol_id}`}
-                  className="text-sm text-zinc-600 dark:text-zinc-400 hover:underline"
+                  className="text-sm text-muted-foreground hover:text-foreground hover:underline"
                 >
                   Saved to My drafts →
                 </a>
               )}
-            </div>
-          </div>
+              </div>
+            </CardContent>
+          </Card>
         </section>
       )}
     </form>

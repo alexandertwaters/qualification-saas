@@ -212,3 +212,14 @@ Where obligations reference general acceptance criteria (e.g., “meets document
 - Each phase (IQ, OQ, PQ) has a summary table of standards, clauses, and annotated requirements
 - Content varies appropriately by equipment cohort, type, use case, and capabilities
 - Placeholders clearly indicate where the user must input protocol ID, equipment, location, company, and acceptance criteria
+
+---
+
+## 7. Remaining Work (Current State)
+
+**Draft generation preview and downloadable drafts still require significant user effort to become usable.** Further improvements needed:
+
+- **Natural narrative flow** — Obligations woven into prose sections rather than tables only
+- **Template library** — "Vaguely specific" narrative text per cohort/type/domain (Phase C)
+- **Equipment/cohort-specific language** — Refrigerator vs. heat sealer vs. balance wording
+- **Reduced reformatting** — Minimize manual edits before QMS submission

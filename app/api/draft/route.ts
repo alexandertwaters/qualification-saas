@@ -7,15 +7,38 @@ import type { DraftResponse } from "../../../src/resolver/transformToDraftRespon
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const draft = (await handleDraftRequest(body)) as DraftResponse;
     const supabase = await createClient();
     const {
       data: { user },
     } = await supabase.auth.getUser();
 
+    if (!user) {
+      return NextResponse.json(
+        { error: "Sign in required to generate drafts" },
+        { status: 401 }
+      );
+    }
+
+    // Require active subscription; no draft without payment
+    const { data: sub } = await supabase
+      .from("subscriptions")
+      .select("plan")
+      .eq("user_id", user.id)
+      .eq("status", "active")
+      .single();
+
+    if (!sub?.plan) {
+      return NextResponse.json(
+        { error: "Active subscription required. Subscribe at /billing to generate drafts." },
+        { status: 403 }
+      );
+    }
+
+    const body = await request.json();
+    const draft = (await handleDraftRequest(body)) as DraftResponse;
+
     let protocolId: string | undefined;
-    if (user && body.equipment_context) {
+    if (body.equipment_context) {
       try {
         const { protocolId: id } = await createProjectAndProtocol(
           user.id,

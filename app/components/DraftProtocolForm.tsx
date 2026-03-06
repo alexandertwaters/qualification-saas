@@ -1,8 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import type { CohortForUI } from "../../src/api/getEquipmentCatalogForUI";
 import { DraftPreviewView } from "./DraftPreviewView";
+import { createClient } from "@/lib/supabase/client";
+import type { User } from "@supabase/supabase-js";
 
 type ResolvedObligation = {
   obligation_id: string;
@@ -30,6 +33,16 @@ export default function DraftProtocolForm() {
   const [capabilityOptions, setCapabilityOptions] = useState<Array<{ id: string; label: string }>>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }) => setUser(user));
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, session) =>
+      setUser(session?.user ?? null)
+    );
+    return () => subscription.unsubscribe();
+  }, []);
 
   useEffect(() => {
     fetch("/api/equipment-catalog")
@@ -93,6 +106,7 @@ export default function DraftProtocolForm() {
       const res = await fetch("/api/draft", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify(requestPayload()),
       });
 
@@ -116,9 +130,17 @@ export default function DraftProtocolForm() {
       const res = await fetch("/api/draft?format=docx", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify(requestPayload()),
       });
-      if (!res.ok) throw new Error("Download failed");
+      if (!res.ok) {
+        const ct = res.headers.get("content-type") ?? "";
+        if (ct.includes("application/json")) {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || "Download failed");
+        }
+        throw new Error("Download failed");
+      }
       const blob = await res.blob();
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -238,6 +260,14 @@ export default function DraftProtocolForm() {
         </div>
       </div>
 
+      {!user && (
+        <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-900/20 dark:text-amber-200">
+          Sign in or{" "}
+          <Link href="/signup" className="font-medium underline hover:no-underline">sign up</Link>
+          {" "}to generate protocol drafts.
+        </div>
+      )}
+
       {error && (
         <div className="rounded bg-red-100 px-3 py-2 text-sm text-red-800 dark:bg-red-900/30 dark:text-red-200">
           {error}
@@ -246,7 +276,7 @@ export default function DraftProtocolForm() {
 
       <button
         type="submit"
-        disabled={loading || !cohortId || !equipmentId || !intendedUse || capabilities.length === 0}
+        disabled={!user || loading || !cohortId || !equipmentId || !intendedUse || capabilities.length === 0}
         className="rounded bg-foreground px-6 py-3 text-background font-medium hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {loading ? "Generating…" : "Generate draft"}

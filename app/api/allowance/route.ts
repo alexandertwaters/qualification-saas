@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { PLANS } from "@/lib/stripe";
 
-const DEFAULT_DRAFTS_LIMIT = 10;
-
 export async function GET() {
   const supabase = await createClient();
   const {
@@ -14,7 +12,8 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  let limit = DEFAULT_DRAFTS_LIMIT;
+  // No active subscription = no draft allowance
+  let limit = 0;
   try {
     const { data: sub } = await supabase
       .from("subscriptions")
@@ -26,7 +25,7 @@ export async function GET() {
       limit = PLANS[sub.plan as keyof typeof PLANS].draftsLimit;
     }
   } catch {
-    // Use default if subscriptions table doesn't exist
+    // No subscription or table missing => limit stays 0
   }
 
   const now = new Date();

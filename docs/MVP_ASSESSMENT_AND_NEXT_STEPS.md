@@ -16,8 +16,8 @@ The following are **excluded** from MVP scope:
 
 | Day | Task | Status | Notes |
 |-----|------|--------|------|
-| **1** | Repo + infra | **Partial** | Next.js + TypeScript ✓. GitHub repo exists. Supabase project and Vercel link need setup. |
-| **2** | Auth + basic UI shell | **Not done** | No Supabase Auth, login, signup, dashboard. |
+| **1** | Repo + infra | **Done** | Next.js + TypeScript ✓. GitHub repo, Supabase project, Vercel connected. |
+| **2** | Auth + basic UI shell | **Done** | Supabase Auth, signup, login, session, dashboard, protected routes. |
 | **3** | Standards metadata + equipment tables | **Partial (different approach)** | File-based ontology (`ontology/cohorts/*.csv`) and obligation CSVs instead of Postgres. No `standards`, `clauses`, `equipment_types`, `equipment_rules` in DB. |
 | **4–5** | Protocol generator core | **Partial** | Obligation resolver + Word/HTML output ✓. No URS/PVP; IQ/OQ/PQ obligations only. Template engine differs from planned HTML merge. |
 | **6–7** | Equipment calculator + control plan | **Excluded** | Excluded from MVP scope (advisory only; calculator can be construed as prescriptive). |
@@ -26,9 +26,9 @@ The following are **excluded** from MVP scope:
 
 | Day | Task | Status | Notes |
 |-----|------|--------|------|
-| **8** | Stripe integration | **Not done** | No Stripe product, subscription, webhook, or invoice flow. |
+| **8** | Stripe integration | **Done** | Stripe products (Starter/Growth/Scale, annual + monthly), checkout, webhook, price IDs. |
 | **9** | Export and download | **Done (partial)** | Word (.docx) export ✓. In-site HTML preview ✓. No PDF export. |
-| **10** | Compliance pages + cookie banner | **Not done** | No privacy, T&C, cookie banner. |
+| **10** | Compliance pages + cookie banner | **Done** | Privacy, T&C, cookie banner ✓. |
 | **11** | Email notifications | **Not done** | No Resend/Mailgun or transactional emails. |
 | **12** | Landing page + demo content | **Partial** | Functional protocol form page ✓. Not a marketing landing with CTA/demo. |
 | **13** | QA and user flow testing | **Not done** | No automated E2E tests. |
@@ -38,10 +38,11 @@ The following are **excluded** from MVP scope:
 
 | Criterion | Status |
 |-----------|--------|
-| User can sign up, create validation job (equipment + use case + capabilities), get downloadable protocol draft | **Partial** — Equipment selection + draft protocol ✓. No signup, draft storage, or revisitation. |
-| Billing active: Stripe subscription + invoice in dashboard | **Not done** |
-| Cookie banner, privacy, T&C | **Not done** |
-| Deployed to Vercel, connected to Supabase | **Partial** — Vercel ✓; Supabase not yet connected. |
+| User can sign up, create validation job (equipment + use case + capabilities), get downloadable protocol draft | **Done** — Signup, draft storage, My drafts, protocol view/download ✓. |
+| Billing active: Stripe subscription + invoice in dashboard | **Done** |
+| Cookie banner, privacy, T&C | **Done** |
+| Deployed to Vercel, connected to Supabase | **Done** — Vercel ✓; Supabase ✓. |
+| Security hardening (headers, cookies, no secrets in frontend) | **Required before MVP complete** — See section 3. |
 
 ### Tech stack alignment
 
@@ -49,7 +50,7 @@ The following are **excluded** from MVP scope:
 |---------|---------|
 | Next.js + TypeScript | ✓ |
 | React, TailwindCSS | ✓ |
-| shadcn/ui | Not used |
+| shadcn/ui | Planned (adopt before MVP complete) |
 | Supabase (Postgres, Auth, Storage) | Auth integrated (signup, login, session) |
 | Vercel | ✓ Connected ([validation-saas](https://vercel.com/alexandertwaters-projects/validation-saas)) |
 | Stripe Billing | Checkout + webhook integrated |
@@ -60,18 +61,21 @@ The following are **excluded** from MVP scope:
 
 **Planned MVP tables:** `users`, `projects`, `standards`, `clauses`, `equipment_types`, `equipment_rules`, `protocols`, `billing`.
 
-**Current:** File-based. Ontology and obligations live in CSV/TS, no Supabase tables.
+**Current:** File-based ontology; Postgres for `projects`, `protocols` (with `draft_response`), `subscriptions`. Migrations: `001_add_draft_response.sql`, `002_add_subscriptions.sql`.
 
 ### API endpoints
 
 | Planned | Current |
 |---------|---------|
-| `POST /api/generate` | `POST /api/draft` (generates protocol, no storage) |
-| `GET /api/protocol/:id` | Not implemented |
-| `POST /api/stripe/webhook` | Not implemented |
+| `POST /api/generate` | `POST /api/draft` (generates protocol, stores when user logged in) |
+| `GET /api/protocol/:id` | ✓ Implemented |
+| `POST /api/stripe/webhook` | ✓ Implemented |
 | `POST /api/email/send` | Not implemented |
 | — | `GET /api/equipment-catalog` ✓ |
 | — | `GET /api/equipment-options` ✓ |
+| — | `POST /api/stripe/checkout` ✓ |
+| — | `GET /api/allowance` ✓ |
+| — | `GET /api/protocols` ✓ |
 
 ### UI pages
 
@@ -79,9 +83,9 @@ The following are **excluded** from MVP scope:
 |---------|---------|
 | `/` landing | ✓ (protocol form, not marketing) |
 | `/signup`, `/login` | ✓ Implemented |
-| `/dashboard` | ✓ Shell (My drafts placeholder) |
+| `/dashboard` | ✓ My drafts list, allowance display |
 | `/projects/new` | Partial (form on `/`) |
-| `/protocol/:id` | Partial (preview in-form, no persisted protocol) |
+| `/protocol/:id` | ✓ View + download persisted protocols |
 | `/billing` | ✓ Implemented |
 
 ---
@@ -95,8 +99,13 @@ The following are **excluded** from MVP scope:
 - **In-site draft view** — Human-readable HTML preview in a view panel
 - **Word (.docx) download** — Downloadable protocol draft
 - **Equipment catalog API** — `/api/equipment-catalog`, `/api/equipment-options` (dynamic use case/capabilities per equipment)
-- **Draft API** — `POST /api/draft` (JSON or Word)
+- **Draft API** — `POST /api/draft` (JSON or Word, stores to Postgres when user logged in)
 - **Advisory positioning** — Notice that users bear responsibility
+- **Supabase Auth** — Signup, login, session, auth callback, middleware refresh
+- **Draft storage and revisitation** — My drafts list in dashboard, protocol view + download
+- **Stripe billing** — Checkout, webhook (checkout.session.completed, subscription updated/deleted), Starter/Growth/Scale (annual + monthly)
+- **Subscription allowance** — "X of Y drafts used" display
+- **Compliance** — Privacy, T&C, cookie banner
 
 ---
 
@@ -104,24 +113,25 @@ The following are **excluded** from MVP scope:
 
 ### High priority
 
-1. **Draft protocol revisitation** — Users must be able to revisit generated draft protocol templates. A dedicated place (e.g. dashboard or “My drafts”) to view, re-open, and re-download drafts they have generated.
-2. **Subscription allowance display** — Users should see their plan’s draft protocol allowance (e.g. “8 of 10 drafts used this month”) so they know how many drafts remain.
-3. **Supabase setup** — Project, DB, Auth
-4. **Auth flow** — Signup, login, session, protected routes
-5. **Stripe** — Subscription, webhooks, invoices, pricing tiers (see section 9)
-6. **Draft storage** — Persist generated draft protocol templates in Postgres for revisitation
+1. ~~**Draft protocol revisitation**~~ — **Done.** Dashboard with My drafts; view and download at `/protocol/[id]`.
+2. ~~**Subscription allowance display**~~ — **Done.** "X of Y drafts used" on dashboard.
+3. ~~**Supabase setup**~~ — **Done.** Project, DB, Auth configured.
+4. ~~**Auth flow**~~ — **Done.** Signup, login, session, protected routes.
+5. ~~**Stripe**~~ — **Done.** Products, checkout, webhook, price IDs; see section 9 and `docs/STRIPE_STEP3.md`.
+6. ~~**Draft storage**~~ — **Done.** Protocols stored in Postgres; `001_add_draft_response.sql`, `002_add_subscriptions.sql`.
 
 ### Medium priority
 
-7. **Demo video** — For visitors (not yet subscribed): a demo video on the landing page showing the workflow (select equipment → use case → capabilities → generate draft → scroll draft → download .docx). No free trial; demo replaces it.
-8. **Landing page** — Marketing layout, CTA, demo video
-9. **Compliance** — Privacy, T&C, cookie banner
+7. **Demo video** — *Deferred.* For visitors (not yet subscribed): a demo video on the landing page showing the workflow (select equipment → use case → capabilities → generate draft → scroll draft → download .docx). No free trial; demo replaces it. **Create only after:** draft template protocol generation is enhanced and site UI/UX is finalized.
+8. **Landing page** — Marketing layout, CTA; add demo video once draft generation and UI/UX are finalized (see item 7).
+9. **shadcn/ui** — Adopt shadcn for consistent, accessible UI components.
+10. ~~**Compliance**~~ — **Done.** Privacy, T&C, cookie banner.
 
 ### Lower priority
 
-10. **Email** — Signup, renewal, invoice receipts
-11. **PDF export** — Optional PDF in addition to Word
-12. **QA** — E2E and regression tests
+11. **Email** — Signup, renewal, invoice receipts
+12. **PDF export** — Optional PDF in addition to Word
+13. **QA** — E2E and regression tests
 
 ### Protocol generation (future improvement)
 
@@ -130,13 +140,55 @@ The following are **excluded** from MVP scope:
 - **Summarization tables** — Phase-level tables of obligations and standards reflecting natural workflow
 - **Example Protocol Drafts alignment** — Document structure and language adapted from `docs/Example Protocol Drafts`
 
-### Security requirements
+### Security hardening (MVP gate)
 
-- **No bot signups** — Bot prevention (CAPTCHA, rate limits, etc.)
-- **No false invoices** — Only real orders generate invoices
-- **No draft without payment** — Draft preview and generation gated behind subscription
-- **Real users only** — Password reset, email on orders, user receives invoice
-- **Help pathway** — Automated help request submission for payment or draft issues
+**All items below must be satisfied before MVP is considered complete.**
+
+*Research context:* Rapidly-built ("vibe-coded") sites commonly ship with: zero CSP, no HSTS, no X-Frame-Options; cookies without Secure/HttpOnly/SameSite (especially session cookies); exposed server versions in headers; hardcoded API keys; Stripe secret keys or Supabase service role keys in frontend; secrets committed to git. Incidents (e.g. Moltbook, exposed Supabase keys in client-side JS) show how a single leaked key can expose data and incur large cloud bills. OWASP Session Management Cheat Sheet, MDN Secure cookie guides, and Next.js CSP docs inform these requirements.
+
+#### Response headers
+
+| Requirement | Notes |
+|-------------|-------|
+| Remove server/version from headers | `X-Powered-By` and other version-leaking headers must not expose Next.js or runtime versions. Use `poweredByHeader: false` in `next.config.js`; consider `next-secure-headers` or custom middleware. |
+| Content-Security-Policy (CSP) | Mitigate XSS, clickjacking, and code injection. Use nonces for inline scripts where needed. Apply via middleware, exclude API routes/static assets as appropriate. |
+| Strict-Transport-Security (HSTS) | Force HTTPS. Set `max-age`, `includeSubDomains`, `preload` where applicable. |
+| X-Frame-Options | `SAMEORIGIN` or `DENY` to prevent clickjacking. |
+| X-Content-Type-Options | `nosniff` to prevent MIME sniffing. |
+| Referrer-Policy | Limit referrer leakage (`strict-origin-when-cross-origin` or tighter). |
+| Permissions-Policy | Restrict browser features (camera, geolocation, etc.) not needed by the app. |
+
+#### Cookie security
+
+| Requirement | Notes |
+|-------------|-------|
+| Session cookies: HttpOnly | Prevents JavaScript access; protects against XSS-based session theft. |
+| Session cookies: Secure | Transmit only over HTTPS. |
+| Session cookies: SameSite | `Strict` or `Lax` to reduce CSRF risk. |
+| Cookie prefix | Use `__Secure-` or `__Host-` where supported to prevent overwrite by insecure sources. |
+
+Supabase Auth and Stripe handle many cookie details; verify their defaults and override where necessary.
+
+#### API keys and secrets (never in frontend)
+
+| Requirement | Notes |
+|-------------|-------|
+| No Stripe secret key in frontend | `STRIPE_SECRET_KEY` must exist only in server env; never in `NEXT_PUBLIC_*` or client bundles. |
+| No Supabase service role key in frontend | `SUPABASE_SERVICE_ROLE_KEY` bypasses RLS; must stay server-side only. Use anon key in client with RLS. |
+| No other secrets in client code | Audit for hardcoded keys, tokens, or URLs that expose sensitive services. |
+| No secrets in git | `.gitignore` must exclude `.env*`; use pre-commit hooks or secret scanning (e.g. GitHub). |
+
+#### Application-level security
+
+| Requirement | Notes |
+|-------------|-------|
+| No bot signups | CAPTCHA, rate limits, or equivalent. |
+| No false invoices | Only real Stripe orders generate invoices. |
+| No draft without payment | Draft preview and generation gated behind subscription. |
+| Real users only | Password reset, email on orders, invoice delivery. |
+| Help pathway | Automated help request flow for payment or draft issues. |
+
+---
 
 ### Product and discoverability
 
@@ -262,7 +314,7 @@ In Project → Settings → Environment Variables add:
 | `SUPABASE_SERVICE_ROLE_KEY` | From Supabase | Service role | For Stripe webhook |
 | `STRIPE_SECRET_KEY` | From Stripe | Secret key | For checkout |
 | `STRIPE_WEBHOOK_SECRET` | From Stripe | Webhook signing secret | For webhook verification |
-| `STRIPE_PRICE_STARTER_ANNUAL` etc. | From Stripe | Price IDs | Create products in Stripe Dashboard |
+| `STRIPE_PRICE_STARTER_ANNUAL` etc. | From Stripe | Price IDs | Configured; see `docs/STRIPE_STEP3.md` |
 
 ### 6.3 Build settings **done**
 
@@ -285,14 +337,16 @@ Project → Settings → Domains → Add (e.g. `app.yourdomain.com`)
 ## 7. Immediate sequence
 
 1. Merge to `main` and confirm Vercel deploys **done**
-2. Create Supabase project and run SQL for `projects` and `protocols` **done** 
-3. Add Supabase env vars in Vercel  
-4. Implement Supabase Auth (signup, login) and protected routes **done**  
-5. Implement draft storage and revisitation (My drafts / dashboard with list of generated drafts) **done**  
-6. Implement subscription allowance display (X of Y drafts used) **done**  
-7. Implement Stripe products for Starter/Growth/Scale and webhook **done**  
-8. Add demo video for visitors on landing page (defer until site appearance finalized)  
+2. Create Supabase project and run SQL for `projects` and `protocols` **done**
+3. Add Supabase env vars in Vercel **done**
+4. Implement Supabase Auth (signup, login) and protected routes **done**
+5. Implement draft storage and revisitation (My drafts / dashboard with list of generated drafts) **done**
+6. Implement subscription allowance display (X of Y drafts used) **done**
+7. Implement Stripe products for Starter/Growth/Scale and webhook **done**
+8. Add demo video for visitors on landing page — *Deferred until* draft preview (template protocol generation) is enhanced and site UI/UX is finalized.
 9. Add compliance (privacy, T&C, cookie banner) **done**
+10. Adopt shadcn/ui for UI components
+11. Complete security hardening (section 3) — response headers, cookie flags, API key hygiene, CSP, HSTS, X-Frame-Options, etc. **MVP gate**
 
 ---
 
@@ -306,7 +360,7 @@ Project → Settings → Domains → Add (e.g. `app.yourdomain.com`)
 
 ## 9. Pricing tiers (MVP)
 
-**No free trial** — Demo video on the landing page replaces a free trial.
+**No free trial** — Demo video on the landing page replaces a free trial. *Create demo only after draft template generation is enhanced and UI/UX is finalized.*
 
 **Annual billing preferred/default** — 17% discount vs monthly.
 
